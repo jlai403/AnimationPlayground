@@ -8,32 +8,42 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RippleController: UIViewController {
     
     private let MAX_RIPPLE_WIDTH = CGFloat(600)
+    private let RIPPLE_COUNT = 2
     
     @IBOutlet weak var circleView: CircleView!
-    var secondCircleView: CircleView!
-    var thirdCircleView: CircleView!
+
+    var ripples: [CircleView]!
+    
+    override func viewDidLoad() {
+        ripples = [CircleView]()
+    }
     
     override func viewDidAppear(animated: Bool) {
-        initDefaults()
+        initRipples()
         animateRipples()
     }
     
-    private func initDefaults() {
-        self.secondCircleView = CircleView(frame: circleView.frame)
-        self.view.addSubview(secondCircleView)
-
-        self.thirdCircleView = CircleView(frame: circleView.frame)
-        self.view.addSubview(thirdCircleView)
+    private func initRipples() {
+        for (var i = 0; i < self.RIPPLE_COUNT; i++) {
+            var newRipple = CircleView(frame: circleView.frame)
+            ripples.append(newRipple)
+            
+            self.view.addSubview(newRipple)
+        }
     }
     
 
     func animateRipples() {
         delayedRipple(0.25, circleView: circleView, duration: 3.5, maxWidth: MAX_RIPPLE_WIDTH)
-        delayedRipple(0.75, circleView: secondCircleView, duration: 3.5, maxWidth: MAX_RIPPLE_WIDTH)
-        delayedRipple(1.00, circleView: thirdCircleView, duration: 3.5, maxWidth: MAX_RIPPLE_WIDTH)
+        
+        var delay = 0.75
+        for ripple in ripples {
+            delayedRipple(delay, circleView: ripple, duration: 3.5, maxWidth: MAX_RIPPLE_WIDTH)
+            delay += (0.25)
+        }
     }
     
     func delayedRipple(delay: Double, circleView: CircleView, duration: Double, maxWidth: CGFloat) {
