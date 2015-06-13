@@ -2,64 +2,78 @@ import UIKit
 
 class TranslationController: UIViewController {
 
+    private let TRANSLATE_INTERVAL = 1.0
+    
     @IBOutlet weak var destination: UIView!
     
-    @IBOutlet weak var origin: UIButton!
+    @IBOutlet weak var button: TranslateButton!
+    
+    var translatedLabel: UILabel?
     
     @IBAction func translate(sender: UIButton) {
-        var translatedLabel = toLabel(origin)
-        self.view.addSubview(translatedLabel)
+        sender.enabled = false
         
-        UIButton.animateWithDuration(1.5,
+        var newLabel = button.toLabel()
+        self.view.addSubview(newLabel)
+        
+        UIButton.animateWithDuration(TRANSLATE_INTERVAL,
             animations: {
-                translatedLabel.frame = self.destination.frame
+                newLabel.frame = self.destination.frame
             },
             completion: { (finished) in
-                var updatedButton: UIButton
-                if let currentButton  = self.origin as? MoveButton {
-                    updatedButton = self.getTryItAgainButton()
-                } else {
-                    updatedButton = self.getMoveButton()
-                }
-                
-                updatedButton.addTarget(self, action: Selector("translate:"), forControlEvents: .TouchUpInside)
-
-                self.origin.removeFromSuperview()
-                self.origin = updatedButton
-                self.view.addSubview(self.origin)
+                var newButton = self.getNewButton()
+                self.cleanup(newButton, newLabel: newLabel)
             }
         )
     }
     
-    private func getTryItAgainButton() -> UIButton {
-        var tryItAgainButton = TryItAgainButton.buttonWithType(UIButtonType.Custom) as! TryItAgainButton
-        tryItAgainButton.update(self.origin.frame)
-        return tryItAgainButton
+    private func getNewButton() -> TranslateButton {
+        var newButton: TranslateButton
+       
+        if let currentButton  = self.button as? MoveButton {
+            newButton = TryItAgainButton.buttonWithType(UIButtonType.Custom) as! TranslateButton
+        } else {
+            newButton = MoveButton.buttonWithType(UIButtonType.Custom) as! TranslateButton
+        }
+        
+        newButton.update(self.button.frame)
+        newButton.addTarget(self, action: Selector("translate:"), forControlEvents: .TouchUpInside)
+
+        return newButton
     }
     
-    private func getMoveButton() -> UIButton {
-        var moveButton = MoveButton.buttonWithType(UIButtonType.Custom) as! MoveButton
-        moveButton.update(self.origin.frame)
-        return moveButton
-    }
-    
-    func toLabel(origin: UIButton) -> UILabel {
-        var label = UILabel(frame: origin.frame)
-        label.backgroundColor = origin.backgroundColor
-        label.text = origin.titleLabel?.text
-        label.textColor = origin.titleLabel?.textColor
-        label.textAlignment = NSTextAlignment.Center
-        return label
+    func cleanup(newButton:TranslateButton, newLabel:UILabel) {
+        self.button.removeFromSuperview()
+        self.button = newButton
+        self.view.addSubview(self.button)
+        
+        if let label = translatedLabel as UILabel! {
+            label.removeFromSuperview()
+            
+        }
+        self.translatedLabel = newLabel
     }
 }
 
-class MoveButton: UIButton {
+class TranslateButton: UIButton {
     
-    func update(frame: CGRect){
-        setDefaults(frame)
+    func toLabel() -> UILabel {
+        var label = UILabel(frame: self.frame)
+        label.backgroundColor = self.backgroundColor
+        label.text = self.titleLabel?.text
+        label.textColor = self.titleLabel?.textColor
+        label.textAlignment = NSTextAlignment.Center
+        return label
     }
     
-    private func setDefaults(frame: CGRect) {
+    func update(frame: CGRect) {
+        fatalError("not implemented")
+    }
+}
+
+class MoveButton: TranslateButton {
+    
+    override func update(frame: CGRect){
         self.frame = frame
         self.backgroundColor = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 1)
         
@@ -70,19 +84,15 @@ class MoveButton: UIButton {
     }
 }
 
-class TryItAgainButton: UIButton {
+class TryItAgainButton: TranslateButton {
     
-    func update(frame: CGRect){
-        setDefaults(frame)
-    }
-    
-    private func setDefaults(frame: CGRect) {
+    override func update(frame: CGRect){
         self.frame = frame
         self.backgroundColor = UIColor(red: 0.1803, green: 0.8, blue: 0.4431, alpha: 1)
         
         self.titleLabel?.textColor = UIColor.whiteColor()
         self.titleLabel?.font = UIFont.systemFontOfSize(15)
         self.titleLabel?.textAlignment = .Center
-        self.setTitle("that was easy...try it again", forState: .Normal)
+        self.setTitle("that was easy...", forState: .Normal)
     }
 }

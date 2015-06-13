@@ -165,8 +165,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="button" destination="3om-rx-vtl" id="05y-NI-lAM"/>
                         <outlet property="destination" destination="GUy-09-9XP" id="oVZ-8Y-n7f"/>
-                        <outlet property="origin" destination="3om-rx-vtl" id="MSg-Qm-WzF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NiL-fH-1M8" userLabel="First Responder" sceneMemberID="firstResponder"/>
