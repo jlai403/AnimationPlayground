@@ -1,10 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="e1g-jF-PM6">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Ripple Controller-->
+        <!--Home Controller-->
+        <scene sceneID="nf5-c8-4Rb">
+            <objects>
+                <viewController id="p38-Db-y82" userLabel="Home Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MuT-oj-Aci"/>
+                        <viewControllerLayoutGuide type="bottom" id="uJI-y3-fsX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bTG-AP-fLQ" customClass="HomeController">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0v-0w-ljr">
+                                <rect key="frame" x="280" y="89" width="39" height="30"/>
+                                <state key="normal" title="ripple">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Dp3-wz-Xv5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="c0v-0w-ljr" secondAttribute="centerX" id="gLA-Ia-wxL"/>
+                            <constraint firstItem="c0v-0w-ljr" firstAttribute="top" secondItem="MuT-oj-Aci" secondAttribute="bottom" constant="25" id="rL9-bt-617"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="animations" id="JGP-mb-i2r"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zQR-t2-AaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-320" y="369"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mpd-Mn-fP3">
+            <objects>
+                <navigationController id="e1g-jF-PM6" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qib-aW-gGJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="p38-Db-y82" kind="relationship" relationship="rootViewController" id="qzp-xw-1Dl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p2p-Dz-x1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1045" y="369"/>
+        </scene>
+        <!--ripple-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="RippleController" customModule="AnimationPlayground" customModuleProvider="target" sceneMemberID="viewController">
@@ -12,7 +62,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="Ri">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="View">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -48,12 +98,16 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="ripple" id="QEj-Wg-vxH">
+                        <barButtonItem key="backBarButtonItem" title="home" id="TvS-Vt-5zz"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="circleView" destination="kFv-Fc-R3y" id="G4K-ch-NCG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="438" y="369"/>
         </scene>
     </scenes>
 </document>
