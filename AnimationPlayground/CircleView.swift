@@ -5,6 +5,7 @@ import UIKit
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.clearColor()
+        self.hidden = true
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -27,5 +28,6 @@ import UIKit
         var halfEndSize = endSize/2
         self.frame = CGRectMake(x - halfEndSize, y - halfEndSize, endSize, endSize)
         self.alpha = 1.0
+        self.hidden = true
     }
 }

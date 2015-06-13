@@ -23,11 +23,9 @@ class ViewController: UIViewController {
     
     private func initDefaults() {
         self.secondCircleView = CircleView(frame: circleView.frame)
-        self.secondCircleView.hidden = true
         self.view.addSubview(secondCircleView)
 
         self.thirdCircleView = CircleView(frame: circleView.frame)
-        self.thirdCircleView.hidden = true
         self.view.addSubview(thirdCircleView)
     }
     
