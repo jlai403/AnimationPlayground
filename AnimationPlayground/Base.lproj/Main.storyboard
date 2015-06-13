@@ -78,13 +78,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bh4-xx-FS8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0u2-SJ-vvM" userLabel="Avatar">
                                 <rect key="frame" x="250" y="250" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="bUW-Sq-2pM"/>
-                                    <constraint firstAttribute="width" constant="100" id="wRu-89-PtA"/>
+                                    <constraint firstAttribute="height" constant="100" id="ZP0-xo-xmB"/>
+                                    <constraint firstAttribute="width" constant="100" id="Zuo-Ba-2fx"/>
                                 </constraints>
-                            </imageView>
+                                <state key="normal" backgroundImage="avatar.png"/>
+                                <connections>
+                                    <action selector="touchRipple:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WhS-v6-MU8"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="drip drip..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jy-eV-wL5">
                                 <rect key="frame" x="170" y="383" width="250" height="17"/>
                                 <constraints>
@@ -105,12 +109,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="0u2-SJ-vvM" secondAttribute="centerX" id="1mS-WT-va9"/>
                             <constraint firstAttribute="centerY" secondItem="kFv-Fc-R3y" secondAttribute="centerY" id="5n6-uU-xu9"/>
                             <constraint firstAttribute="centerX" secondItem="kFv-Fc-R3y" secondAttribute="centerX" id="COS-PR-is3"/>
-                            <constraint firstAttribute="centerX" secondItem="Bh4-xx-FS8" secondAttribute="centerX" id="Hm0-xG-txX"/>
                             <constraint firstAttribute="centerY" secondItem="4Jy-eV-wL5" secondAttribute="centerY" constant="-100" id="TZi-G5-pYt"/>
-                            <constraint firstAttribute="centerY" secondItem="Bh4-xx-FS8" secondAttribute="centerY" id="YAc-YQ-CsZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4Jy-eV-wL5" secondAttribute="bottom" constant="200" id="kU6-1u-gij"/>
+                            <constraint firstAttribute="centerY" secondItem="0u2-SJ-vvM" secondAttribute="centerY" id="rPK-ov-Irx"/>
                             <constraint firstAttribute="centerX" secondItem="4Jy-eV-wL5" secondAttribute="centerX" constant="5" id="uFL-zG-SvX"/>
                         </constraints>
                         <variation key="default">
@@ -123,7 +127,7 @@
                         <barButtonItem key="backBarButtonItem" title="home" id="TvS-Vt-5zz"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="avatar" destination="Bh4-xx-FS8" id="FxX-NC-Tmg"/>
+                        <outlet property="avatar" destination="0u2-SJ-vvM" id="2G9-OT-FyP"/>
                         <outlet property="circleView" destination="kFv-Fc-R3y" id="G4K-ch-NCG"/>
                     </connections>
                 </viewController>
