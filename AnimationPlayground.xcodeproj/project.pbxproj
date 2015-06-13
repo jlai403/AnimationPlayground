@@ -81,11 +81,11 @@
 			children = (
 				293A9EFD1B2B83B900B7DE15 /* AppDelegate.swift */,
 				293A9EFF1B2B83B900B7DE15 /* ViewController.swift */,
+				293A9F1D1B2B8BFF00B7DE15 /* CircleView.swift */,
 				293A9F011B2B83B900B7DE15 /* Main.storyboard */,
 				293A9F041B2B83B900B7DE15 /* Images.xcassets */,
 				293A9F061B2B83B900B7DE15 /* LaunchScreen.xib */,
 				293A9EFB1B2B83B900B7DE15 /* Supporting Files */,
-				293A9F1D1B2B8BFF00B7DE15 /* CircleView.swift */,
 			);
 			path = AnimationPlayground;
 			sourceTree = "<group>";
@@ -415,6 +415,7 @@
 				293A9F191B2B83B900B7DE15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		293A9F1A1B2B83B900B7DE15 /* Build configuration list for PBXNativeTarget "AnimationPlaygroundTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +424,7 @@
 				293A9F1C1B2B83B900B7DE15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

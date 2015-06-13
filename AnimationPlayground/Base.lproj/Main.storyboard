@@ -25,15 +25,7 @@
                                 <color key="textColor" red="0.38123753669999999" green="0.37966433170000002" blue="0.38287967439999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MEP-L8-YJS" customClass="CircleView" customModule="AnimationPlayground" customModuleProvider="target">
-                                <rect key="frame" x="225" y="225" width="150" height="150"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="HQE-pk-cMg"/>
-                                    <constraint firstAttribute="height" constant="150" id="OTZ-Ua-FBn"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFv-Fc-R3y" customClass="CircleView" customModule="AnimationPlayground" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFv-Fc-R3y" customClass="CircleView" customModule="AnimationPlayground" customModuleProvider="target">
                                 <rect key="frame" x="225" y="225" width="150" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -46,9 +38,7 @@
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="kFv-Fc-R3y" secondAttribute="centerY" id="5n6-uU-xu9"/>
                             <constraint firstAttribute="centerX" secondItem="kFv-Fc-R3y" secondAttribute="centerX" id="COS-PR-is3"/>
-                            <constraint firstAttribute="centerY" secondItem="MEP-L8-YJS" secondAttribute="centerY" id="D2Y-Ql-NNW"/>
                             <constraint firstAttribute="centerY" secondItem="4Jy-eV-wL5" secondAttribute="centerY" constant="-100" id="TZi-G5-pYt"/>
-                            <constraint firstAttribute="centerX" secondItem="MEP-L8-YJS" secondAttribute="centerX" id="irh-tr-YR1"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4Jy-eV-wL5" secondAttribute="bottom" constant="200" id="kU6-1u-gij"/>
                             <constraint firstAttribute="centerX" secondItem="4Jy-eV-wL5" secondAttribute="centerX" constant="5" id="uFL-zG-SvX"/>
                         </constraints>
@@ -60,7 +50,6 @@
                     </view>
                     <connections>
                         <outlet property="circleView" destination="kFv-Fc-R3y" id="G4K-ch-NCG"/>
-                        <outlet property="delayedCircleView" destination="MEP-L8-YJS" id="Mes-8i-kxu"/>
                         <outlet property="searching" destination="4Jy-eV-wL5" id="Hyh-0X-EBf"/>
                     </connections>
                 </viewController>
