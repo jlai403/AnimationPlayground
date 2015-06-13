@@ -12,12 +12,9 @@ class ViewController: UIViewController {
     
     private let MAX_RIPPLE_WIDTH = CGFloat(600)
     
-    @IBOutlet weak var searching: UILabel!
-    
     @IBOutlet weak var circleView: CircleView!
     var secondCircleView: CircleView!
     var thirdCircleView: CircleView!
-    
     
     override func viewDidAppear(animated: Bool) {
         initDefaults()
@@ -25,8 +22,6 @@ class ViewController: UIViewController {
     }
     
     private func initDefaults() {
-        self.view.bringSubviewToFront(searching)
-        
         self.secondCircleView = CircleView(frame: circleView.frame)
         self.secondCircleView.hidden = true
         self.view.addSubview(secondCircleView)
@@ -38,9 +33,9 @@ class ViewController: UIViewController {
     
 
     func animateRipples() {
-        ripple(circleView, duration: 3.5, maxWidth: MAX_RIPPLE_WIDTH)
-        delayedRipple(0.5, circleView: secondCircleView, duration: 3.5, maxWidth: MAX_RIPPLE_WIDTH)
-        delayedRipple(0.75, circleView: thirdCircleView, duration: 3.5, maxWidth: MAX_RIPPLE_WIDTH)
+        delayedRipple(0.25, circleView: circleView, duration: 3.5, maxWidth: MAX_RIPPLE_WIDTH)
+        delayedRipple(0.75, circleView: secondCircleView, duration: 3.5, maxWidth: MAX_RIPPLE_WIDTH)
+        delayedRipple(1.00, circleView: thirdCircleView, duration: 3.5, maxWidth: MAX_RIPPLE_WIDTH)
     }
     
     func delayedRipple(delay: Double, circleView: CircleView, duration: Double, maxWidth: CGFloat) {
