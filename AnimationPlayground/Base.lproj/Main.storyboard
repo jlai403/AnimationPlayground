@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="e1g-jF-PM6">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Home Controller-->
@@ -25,10 +26,21 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="Dp3-wz-Xv5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVh-8s-yzz">
+                                <rect key="frame" x="270" y="127" width="60" height="30"/>
+                                <state key="normal" title="translate">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="6FK-lN-hG8" kind="show" id="AB6-2l-h6t"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="XVh-8s-yzz" firstAttribute="top" secondItem="c0v-0w-ljr" secondAttribute="bottom" constant="8" id="ODj-pB-WP2"/>
                             <constraint firstAttribute="centerX" secondItem="c0v-0w-ljr" secondAttribute="centerX" id="gLA-Ia-wxL"/>
+                            <constraint firstItem="XVh-8s-yzz" firstAttribute="centerX" secondItem="c0v-0w-ljr" secondAttribute="centerX" constant="0.5" id="krU-Ar-9Yh"/>
                             <constraint firstItem="c0v-0w-ljr" firstAttribute="top" secondItem="MuT-oj-Aci" secondAttribute="bottom" constant="25" id="rL9-bt-617"/>
                         </constraints>
                     </view>
@@ -108,6 +120,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="438" y="369"/>
+        </scene>
+        <!--Translation Controller-->
+        <scene sceneID="TJR-Xw-nxV">
+            <objects>
+                <viewController id="6FK-lN-hG8" customClass="TranslationController" customModule="AnimationPlayground" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lxy-7L-ALR"/>
+                        <viewControllerLayoutGuide type="bottom" id="PIq-I7-Lva"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8zm-Hm-JIx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUy-09-9XP">
+                                <rect key="frame" x="354" y="139" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="5kP-Jc-gfd"/>
+                                    <constraint firstAttribute="height" constant="50" id="ysy-oM-Pi3"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3om-rx-vtl" customClass="MoveButton" customModule="AnimationPlayground" customModuleProvider="target">
+                                <rect key="frame" x="46" y="475" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Seu-lj-xRD"/>
+                                    <constraint firstAttribute="height" constant="50" id="VpR-M8-E50"/>
+                                </constraints>
+                                <state key="normal" title="move ">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="translate:" destination="6FK-lN-hG8" eventType="touchUpInside" id="6ZI-XT-6zP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PIq-I7-Lva" firstAttribute="top" secondItem="3om-rx-vtl" secondAttribute="bottom" constant="75" id="1fY-a4-Dn3"/>
+                            <constraint firstItem="3om-rx-vtl" firstAttribute="leading" secondItem="8zm-Hm-JIx" secondAttribute="leadingMargin" constant="30" id="Rjj-d3-FAa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GUy-09-9XP" secondAttribute="trailing" constant="30" id="hNk-Zr-mhS"/>
+                            <constraint firstItem="GUy-09-9XP" firstAttribute="top" secondItem="Lxy-7L-ALR" secondAttribute="bottom" constant="75" id="usL-It-Eee"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="destination" destination="GUy-09-9XP" id="oVZ-8Y-n7f"/>
+                        <outlet property="origin" destination="3om-rx-vtl" id="MSg-Qm-WzF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NiL-fH-1M8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="438" y="1070"/>
         </scene>
     </scenes>
 </document>
