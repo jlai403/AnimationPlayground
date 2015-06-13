@@ -13,6 +13,7 @@
 		293A9F051B2B83B900B7DE15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 293A9F041B2B83B900B7DE15 /* Images.xcassets */; };
 		293A9F081B2B83B900B7DE15 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 293A9F061B2B83B900B7DE15 /* LaunchScreen.xib */; };
 		293A9F141B2B83B900B7DE15 /* AnimationPlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A9F131B2B83B900B7DE15 /* AnimationPlaygroundTests.swift */; };
+		293A9F1E1B2B8BFF00B7DE15 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A9F1D1B2B8BFF00B7DE15 /* CircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		293A9F0D1B2B83B900B7DE15 /* AnimationPlaygroundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimationPlaygroundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		293A9F121B2B83B900B7DE15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		293A9F131B2B83B900B7DE15 /* AnimationPlaygroundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPlaygroundTests.swift; sourceTree = "<group>"; };
+		293A9F1D1B2B8BFF00B7DE15 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				293A9F041B2B83B900B7DE15 /* Images.xcassets */,
 				293A9F061B2B83B900B7DE15 /* LaunchScreen.xib */,
 				293A9EFB1B2B83B900B7DE15 /* Supporting Files */,
+				293A9F1D1B2B8BFF00B7DE15 /* CircleView.swift */,
 			);
 			path = AnimationPlayground;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				293A9F1E1B2B8BFF00B7DE15 /* CircleView.swift in Sources */,
 				293A9F001B2B83B900B7DE15 /* ViewController.swift in Sources */,
 				293A9EFE1B2B83B900B7DE15 /* AppDelegate.swift in Sources */,
 			);
