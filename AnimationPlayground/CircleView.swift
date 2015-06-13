@@ -15,8 +15,8 @@ import UIKit
     override func drawRect(rect: CGRect) {
         var context = UIGraphicsGetCurrentContext()
         CGContextSetLineWidth(context, 1.0)
-        
-        UIColor(red: 0.1803, green: 0.8, blue: 0.4431, alpha: 1).set()
+
+        Colors.jordyBlue.set()
         
         CGContextAddArc(context, (frame.size.width)/2, (frame.size.height)/2, (frame.size.width - 10)/2, 0, CGFloat(M_PI*2.0), 1)
         

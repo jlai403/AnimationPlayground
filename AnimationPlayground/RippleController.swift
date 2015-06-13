@@ -14,11 +14,21 @@ class RippleController: UIViewController {
     private let RIPPLE_COUNT = 2
     
     @IBOutlet weak var circleView: CircleView!
+    @IBOutlet weak var avatar: UIImageView!
 
     var ripples: [CircleView]!
     
     override func viewDidLoad() {
         ripples = [CircleView]()
+        initAvatar()
+    }
+    
+    private func initAvatar() {
+        view.bringSubviewToFront(avatar)
+        avatar.layer.cornerRadius = avatar.frame.size.width/2
+        avatar.layer.masksToBounds = true
+        avatar.layer.borderWidth = 3
+        avatar.layer.borderColor = Colors.greenSea.CGColor
     }
     
     override func viewDidAppear(animated: Bool) {

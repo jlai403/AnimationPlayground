@@ -75,7 +75,7 @@ class MoveButton: TranslateButton {
     
     override func update(frame: CGRect){
         self.frame = frame
-        self.backgroundColor = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 1)
+        self.backgroundColor = Colors.lightBlue
         
         self.titleLabel?.textColor = UIColor.whiteColor()
         self.titleLabel?.font = UIFont.systemFontOfSize(15)
@@ -88,7 +88,7 @@ class TryItAgainButton: TranslateButton {
     
     override func update(frame: CGRect){
         self.frame = frame
-        self.backgroundColor = UIColor(red: 0.1803, green: 0.8, blue: 0.4431, alpha: 1)
+        self.backgroundColor = Colors.emeraldGreen
         
         self.titleLabel?.textColor = UIColor.whiteColor()
         self.titleLabel?.font = UIFont.systemFontOfSize(15)
