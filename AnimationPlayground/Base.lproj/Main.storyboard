@@ -221,7 +221,7 @@
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9IS-qG-6oZ" customClass="CircleView" customModule="AnimationPlayground" customModuleProvider="target">
                                 <rect key="frame" x="26" y="95" width="100" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="9we-dU-LXH"/>
                                     <constraint firstAttribute="height" constant="100" id="IcD-Pr-a4G"/>
@@ -236,19 +236,29 @@
                                     <segue destination="d7j-WV-B1N" kind="unwind" unwindAction="returnHome:" id="tvX-8u-ZKI"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="oyf-Vg-WGf">
+                                <rect key="frame" x="26" y="270" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="5zY-UC-AOO"/>
+                                    <constraint firstAttribute="width" constant="200" id="nXj-64-fCc"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4Bt-N5-2JN" firstAttribute="top" secondItem="34G-aW-iTw" secondAttribute="bottom" id="Cy1-sw-tzQ"/>
                             <constraint firstItem="9IS-qG-6oZ" firstAttribute="leading" secondItem="Gj5-yk-6tU" secondAttribute="leadingMargin" constant="10" id="Kae-VK-rrx"/>
                             <constraint firstItem="4Bt-N5-2JN" firstAttribute="leading" secondItem="Gj5-yk-6tU" secondAttribute="leadingMargin" constant="10" id="P7y-KQ-cYH"/>
+                            <constraint firstItem="oyf-Vg-WGf" firstAttribute="leading" secondItem="Gj5-yk-6tU" secondAttribute="leadingMargin" constant="10" id="QF1-Fx-aee"/>
                             <constraint firstItem="9IS-qG-6oZ" firstAttribute="top" secondItem="34G-aW-iTw" secondAttribute="bottom" constant="75" id="QaB-uA-ne6"/>
                             <constraint firstAttribute="centerX" secondItem="Xbk-Se-F6O" secondAttribute="centerX" id="bgf-SV-Zu0"/>
+                            <constraint firstItem="oyf-Vg-WGf" firstAttribute="top" secondItem="9IS-qG-6oZ" secondAttribute="bottom" constant="75" id="cdQ-FD-aM8"/>
                             <constraint firstItem="SFH-SN-pMg" firstAttribute="top" secondItem="Xbk-Se-F6O" secondAttribute="bottom" constant="75" id="i9e-yS-95q"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="circle" destination="9IS-qG-6oZ" id="VDM-Z6-Ofd"/>
+                        <outlet property="image" destination="oyf-Vg-WGf" id="gAz-dy-f7z"/>
                         <segue destination="mDA-Kf-snT" kind="custom" identifier="customSegueSourceToCustomSegueDestination" id="0p9-vw-SBL"/>
                     </connections>
                 </viewController>
@@ -270,8 +280,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FcI-R6-4Jp" customClass="CircleView" customModule="AnimationPlayground" customModuleProvider="target">
-                                <rect key="frame" x="459" y="30" width="100" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="474" y="30" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="NzV-Xf-maL"/>
                                     <constraint firstAttribute="width" constant="100" id="cH6-XD-OzE"/>
@@ -287,17 +297,27 @@
                                     <segue destination="3NY-ca-vz9" kind="unwind" identifier="unwindFromCustomSegueDestinationToCustomSegueSource" unwindAction="unwindToCustomSegueTransitionSource:" id="TgN-2r-kC1"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="qAB-tL-eRh">
+                                <rect key="frame" x="474" y="138" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="UTP-b5-wxA"/>
+                                    <constraint firstAttribute="height" constant="100" id="qWj-XD-maP"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FcI-R6-4Jp" firstAttribute="top" secondItem="aDm-CS-O0h" secondAttribute="bottom" constant="10" id="E5x-B4-3II"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FcI-R6-4Jp" secondAttribute="trailing" constant="25" id="JCt-W9-ldn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FcI-R6-4Jp" secondAttribute="trailing" constant="10" id="JCt-W9-ldn"/>
+                            <constraint firstItem="qAB-tL-eRh" firstAttribute="top" secondItem="FcI-R6-4Jp" secondAttribute="bottom" constant="8" id="RsD-zz-hD5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qAB-tL-eRh" secondAttribute="trailing" constant="10" id="b4I-iu-MNY"/>
                             <constraint firstAttribute="centerX" secondItem="Upa-at-w8X" secondAttribute="centerX" constant="-0.5" id="gcv-91-yhv"/>
                             <constraint firstItem="rF4-aP-Xe1" firstAttribute="top" secondItem="Upa-at-w8X" secondAttribute="bottom" constant="75" id="iC7-ok-XBA"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="circle" destination="FcI-R6-4Jp" id="4O2-Kh-RcL"/>
+                        <outlet property="image" destination="qAB-tL-eRh" id="v30-qS-YTa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HjJ-2b-1ng" userLabel="First Responder" sceneMemberID="firstResponder"/>

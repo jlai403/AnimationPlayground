@@ -19,24 +19,25 @@ class CustomTransitionDelegate: NSObject, UIViewControllerAnimatedTransitioning,
         let sourceController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! CustomTransitionSourceController
         let destinationController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! CustomTransitionDestinationController
         
-        destinationController.circle.hidden = true
-        
-        var animationCircle = CircleView(frame: sourceController.circle.frame)
-        destinationController.view.addSubview(animationCircle)
+        containerView.addSubview(destinationController.view)
         destinationController.view.layoutIfNeeded()
         
-        containerView.addSubview(destinationController.view)
+        var circleStartAnimationFrame = sourceController.circle.frame
+        var circleDestinationAnimationFrame = destinationController.circle.frame
+        destinationController.circle.frame = circleStartAnimationFrame
+        
+        var imageStartAnimationFrame = sourceController.image.frame
+        var imageDestinationAnimationFrame = destinationController.image.frame
+        destinationController.image.frame = imageStartAnimationFrame
         
         UIView.animateWithDuration(self.transitionDuration(transitionContext),
             animations: {
-                animationCircle.hidden = false
-                animationCircle.frame = destinationController.circle.frame
+                destinationController.circle.frame = circleDestinationAnimationFrame
+                destinationController.image.frame = imageDestinationAnimationFrame
                 destinationController.view.backgroundColor = Colors.capeHoney
             },
             completion: { finished in
-                destinationController.circle.hidden = false
                 transitionContext.completeTransition(true)
-                animationCircle.removeFromSuperview()
             }
         )
     }
@@ -46,30 +47,31 @@ class CustomTransitionDelegate: NSObject, UIViewControllerAnimatedTransitioning,
         let sourceController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! CustomTransitionDestinationController
         let destinationController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! CustomTransitionSourceController
         
-        destinationController.circle.hidden = true
-        
-        var animationCircle = CircleView(frame: sourceController.circle.frame)
-        destinationController.view.addSubview(animationCircle)
+        containerView.addSubview(destinationController.view)
         destinationController.view.layoutIfNeeded()
         
-        containerView.addSubview(destinationController.view)
+        var circleStartAnimationFrame = sourceController.circle.frame
+        var circleDestinationAnimationFrame = destinationController.circle.frame
+        destinationController.circle.frame = circleStartAnimationFrame
+        
+        var imageStartAnimationFrame = sourceController.image.frame
+        var imageDestinationAnimationFrame = destinationController.image.frame
+        destinationController.image.frame = imageStartAnimationFrame
         
         UIView.animateWithDuration(self.transitionDuration(transitionContext),
             animations: {
-                animationCircle.hidden = false
-                animationCircle.frame = destinationController.circle.frame
-                destinationController.view.backgroundColor = UIColor.whiteColor()
+                destinationController.circle.frame = circleDestinationAnimationFrame
+                destinationController.image.frame = imageDestinationAnimationFrame
+                destinationController.view.backgroundColor = Colors.capeHoney
             },
             completion: { finished in
-                destinationController.circle.hidden = false
                 transitionContext.completeTransition(true)
-                animationCircle.removeFromSuperview()
             }
         )
     }
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
-        return 1.0
+        return 1.5
     }
 
     // MARK: UIViewControllerTransitioningDelegate protocol methods

@@ -5,9 +5,20 @@ class CustomTransitionSourceController: UIViewController {
     let customTransitionDelegate = CustomTransitionDelegate()
     
     @IBOutlet weak var circle: CircleView!
-
+    @IBOutlet weak var image: UIImageView!
+    
+    override func viewDidLoad() {
+        styleAvatar()
+    }
+    
     override func viewDidAppear(animated: Bool) {
-        self.circle.hidden = false
+    }
+    
+    func styleAvatar() {
+        self.image.layer.cornerRadius = self.image.frame.width / 2
+        self.image.layer.masksToBounds = true
+        self.image.layer.borderColor = Colors.jordyBlue.CGColor
+        self.image.layer.borderWidth = 3
     }
     
     @IBAction func transition(sender: UIButton) {
