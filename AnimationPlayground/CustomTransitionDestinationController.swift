@@ -1,6 +1,6 @@
 import UIKit
 
-class CustomSegueTransitionDestinationController: UIViewController {
+class CustomTransitionDestinationController: UIViewController {
     
     @IBOutlet weak var circle: CircleView!
     

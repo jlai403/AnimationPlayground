@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		291622951B2F6ECE002B4CFE /* CustomSegueTransitionSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291622941B2F6ECE002B4CFE /* CustomSegueTransitionSourceController.swift */; };
-		291622971B2F6F12002B4CFE /* CustomSegueTransitionDestinationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291622961B2F6F12002B4CFE /* CustomSegueTransitionDestinationController.swift */; };
-		291622991B2F73E2002B4CFE /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291622981B2F73E2002B4CFE /* TransitionManager.swift */; };
+		291622951B2F6ECE002B4CFE /* CustomTransitionSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291622941B2F6ECE002B4CFE /* CustomTransitionSourceController.swift */; };
+		291622971B2F6F12002B4CFE /* CustomTransitionDestinationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291622961B2F6F12002B4CFE /* CustomTransitionDestinationController.swift */; };
+		291622991B2F73E2002B4CFE /* CustomTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291622981B2F73E2002B4CFE /* CustomTransitionDelegate.swift */; };
 		293A9EFE1B2B83B900B7DE15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A9EFD1B2B83B900B7DE15 /* AppDelegate.swift */; };
 		293A9F001B2B83B900B7DE15 /* RippleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A9EFF1B2B83B900B7DE15 /* RippleController.swift */; };
 		293A9F031B2B83B900B7DE15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293A9F011B2B83B900B7DE15 /* Main.storyboard */; };
@@ -34,9 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		291622941B2F6ECE002B4CFE /* CustomSegueTransitionSourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegueTransitionSourceController.swift; sourceTree = "<group>"; };
-		291622961B2F6F12002B4CFE /* CustomSegueTransitionDestinationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegueTransitionDestinationController.swift; sourceTree = "<group>"; };
-		291622981B2F73E2002B4CFE /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		291622941B2F6ECE002B4CFE /* CustomTransitionSourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTransitionSourceController.swift; sourceTree = "<group>"; };
+		291622961B2F6F12002B4CFE /* CustomTransitionDestinationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTransitionDestinationController.swift; sourceTree = "<group>"; };
+		291622981B2F73E2002B4CFE /* CustomTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTransitionDelegate.swift; sourceTree = "<group>"; };
 		293A9EF81B2B83B900B7DE15 /* AnimationPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		293A9EFC1B2B83B900B7DE15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		293A9EFD1B2B83B900B7DE15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +93,7 @@
 		293A9EFA1B2B83B900B7DE15 /* AnimationPlayground */ = {
 			isa = PBXGroup;
 			children = (
+				6C622B351B2FE3D20060DB59 /* Animation */,
 				6C6A94C11B2CD526004F218E /* Resources */,
 				6C77CA131B2BCC9800F25B33 /* Views */,
 				6C77CA121B2BCC8800F25B33 /* Controllers */,
@@ -101,7 +102,6 @@
 				293A9F041B2B83B900B7DE15 /* Images.xcassets */,
 				293A9F061B2B83B900B7DE15 /* LaunchScreen.xib */,
 				293A9EFB1B2B83B900B7DE15 /* Supporting Files */,
-				291622981B2F73E2002B4CFE /* TransitionManager.swift */,
 			);
 			path = AnimationPlayground;
 			sourceTree = "<group>";
@@ -131,6 +131,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6C622B351B2FE3D20060DB59 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				291622981B2F73E2002B4CFE /* CustomTransitionDelegate.swift */,
+			);
+			name = Animation;
+			sourceTree = "<group>";
+		};
 		6C6A94C11B2CD526004F218E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,8 +161,8 @@
 				6C77CA101B2BC8F500F25B33 /* HomeController.swift */,
 				293A9EFF1B2B83B900B7DE15 /* RippleController.swift */,
 				6C77CA141B2BCCAB00F25B33 /* TranslationController.swift */,
-				291622941B2F6ECE002B4CFE /* CustomSegueTransitionSourceController.swift */,
-				291622961B2F6F12002B4CFE /* CustomSegueTransitionDestinationController.swift */,
+				291622941B2F6ECE002B4CFE /* CustomTransitionSourceController.swift */,
+				291622961B2F6F12002B4CFE /* CustomTransitionDestinationController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -269,13 +277,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				291622971B2F6F12002B4CFE /* CustomSegueTransitionDestinationController.swift in Sources */,
+				291622971B2F6F12002B4CFE /* CustomTransitionDestinationController.swift in Sources */,
 				6C77CA151B2BCCAB00F25B33 /* TranslationController.swift in Sources */,
 				6C6A94C61B2CD968004F218E /* Colors.swift in Sources */,
-				291622951B2F6ECE002B4CFE /* CustomSegueTransitionSourceController.swift in Sources */,
+				291622951B2F6ECE002B4CFE /* CustomTransitionSourceController.swift in Sources */,
 				6C77CA111B2BC8F500F25B33 /* HomeController.swift in Sources */,
 				293A9F1E1B2B8BFF00B7DE15 /* CircleView.swift in Sources */,
-				291622991B2F73E2002B4CFE /* TransitionManager.swift in Sources */,
+				291622991B2F73E2002B4CFE /* CustomTransitionDelegate.swift in Sources */,
 				293A9F001B2B83B900B7DE15 /* RippleController.swift in Sources */,
 				293A9EFE1B2B83B900B7DE15 /* AppDelegate.swift in Sources */,
 			);

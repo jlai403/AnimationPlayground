@@ -1,6 +1,6 @@
 import UIKit
 
-class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
+class CustomTransitionDelegate: NSObject, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
     
     private var presenting = false
     
@@ -16,8 +16,8 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
     
     private func presentingAnimation(transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView()
-        let sourceController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! CustomSegueTransitionSourceController
-        let destinationController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! CustomSegueTransitionDestinationController
+        let sourceController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! CustomTransitionSourceController
+        let destinationController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! CustomTransitionDestinationController
         
         sourceController.circle.hidden = true
         
@@ -31,7 +31,7 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
             animations: {
                 animationCircle.hidden = false
                 animationCircle.frame = destinationController.circle.frame
-                destinationController.view.backgroundColor = Colors.emeraldGreen
+                destinationController.view.backgroundColor = Colors.capeHoney
             },
             completion: { finished in
                 transitionContext.completeTransition(true)
@@ -42,8 +42,8 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
     
     private func dismissAnimation(transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView()
-        let sourceController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! CustomSegueTransitionDestinationController
-        let destinationController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! CustomSegueTransitionSourceController
+        let sourceController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! CustomTransitionDestinationController
+        let destinationController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! CustomTransitionSourceController
         
         sourceController.circle.hidden = true
         

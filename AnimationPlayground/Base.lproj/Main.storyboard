@@ -198,10 +198,10 @@
             </objects>
             <point key="canvasLocation" x="438" y="1070"/>
         </scene>
-        <!--Custom Segue Transition Controller-->
+        <!--Custom Transition Source Controller-->
         <scene sceneID="kD8-Nl-eAD">
             <objects>
-                <viewController id="9JV-Fi-iat" userLabel="Custom Segue Transition Controller" customClass="CustomSegueTransitionSourceController" customModule="AnimationPlayground" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9JV-Fi-iat" userLabel="Custom Transition Source Controller" customClass="CustomTransitionSourceController" customModule="AnimationPlayground" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="34G-aW-iTw"/>
                         <viewControllerLayoutGuide type="bottom" id="SFH-SN-pMg"/>
@@ -257,10 +257,10 @@
             </objects>
             <point key="canvasLocation" x="438" y="1817"/>
         </scene>
-        <!--Custom Segue Transition Destination Controller-->
+        <!--Custom Transition Destination Controller-->
         <scene sceneID="00C-C6-CWw">
             <objects>
-                <viewController id="mDA-Kf-snT" customClass="CustomSegueTransitionDestinationController" customModule="AnimationPlayground" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mDA-Kf-snT" userLabel="Custom Transition Destination Controller" customClass="CustomTransitionDestinationController" customModule="AnimationPlayground" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aDm-CS-O0h"/>
                         <viewControllerLayoutGuide type="bottom" id="rF4-aP-Xe1"/>

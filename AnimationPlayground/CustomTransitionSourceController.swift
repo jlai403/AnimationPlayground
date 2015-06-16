@@ -1,8 +1,8 @@
 import UIKit
 
-class CustomSegueTransitionSourceController: UIViewController {
+class CustomTransitionSourceController: UIViewController {
     
-    let transitionManager = TransitionManager()
+    let customTransitionDelegate = CustomTransitionDelegate()
     
     @IBOutlet weak var circle: CircleView!
 
@@ -18,7 +18,7 @@ class CustomSegueTransitionSourceController: UIViewController {
         if segue.identifier == "customSegueSourceToCustomSegueDestination" {
             let destinationController = segue.destinationViewController as! UIViewController
 
-            destinationController.transitioningDelegate = transitionManager
+            destinationController.transitioningDelegate = customTransitionDelegate
         }
     }
     
