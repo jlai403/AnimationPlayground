@@ -6,6 +6,10 @@ class CustomSegueTransitionSourceController: UIViewController {
     
     @IBOutlet weak var circle: CircleView!
 
+    override func viewDidAppear(animated: Bool) {
+        self.circle.hidden = false
+    }
+    
     @IBAction func transition(sender: UIButton) {
         self.performSegueWithIdentifier("customSegueSourceToCustomSegueDestination", sender: self)
     }
