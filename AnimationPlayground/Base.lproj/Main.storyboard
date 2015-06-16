@@ -210,15 +210,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xbk-Se-F6O">
-                                <rect key="frame" x="267" y="495" width="66" height="30"/>
-                                <state key="normal" title="Transition">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="transition:" destination="9JV-Fi-iat" eventType="touchUpInside" id="7Fd-5o-ZVu"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9IS-qG-6oZ" customClass="CircleView" customModule="AnimationPlayground" customModuleProvider="target">
                                 <rect key="frame" x="26" y="95" width="100" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -243,18 +234,28 @@
                                     <constraint firstAttribute="width" constant="200" id="nXj-64-fCc"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmb-NQ-11h">
+                                <rect key="frame" x="258" y="559" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="SFH-SN-pMg" firstAttribute="top" secondItem="bmb-NQ-11h" secondAttribute="bottom" constant="20" id="1fk-Sv-b6H"/>
+                            <constraint firstAttribute="centerX" secondItem="bmb-NQ-11h" secondAttribute="centerX" id="CmI-u0-8MM"/>
                             <constraint firstItem="4Bt-N5-2JN" firstAttribute="top" secondItem="34G-aW-iTw" secondAttribute="bottom" id="Cy1-sw-tzQ"/>
                             <constraint firstItem="9IS-qG-6oZ" firstAttribute="leading" secondItem="Gj5-yk-6tU" secondAttribute="leadingMargin" constant="10" id="Kae-VK-rrx"/>
                             <constraint firstItem="4Bt-N5-2JN" firstAttribute="leading" secondItem="Gj5-yk-6tU" secondAttribute="leadingMargin" constant="10" id="P7y-KQ-cYH"/>
                             <constraint firstItem="oyf-Vg-WGf" firstAttribute="leading" secondItem="Gj5-yk-6tU" secondAttribute="leadingMargin" constant="10" id="QF1-Fx-aee"/>
                             <constraint firstItem="9IS-qG-6oZ" firstAttribute="top" secondItem="34G-aW-iTw" secondAttribute="bottom" constant="75" id="QaB-uA-ne6"/>
-                            <constraint firstAttribute="centerX" secondItem="Xbk-Se-F6O" secondAttribute="centerX" id="bgf-SV-Zu0"/>
                             <constraint firstItem="oyf-Vg-WGf" firstAttribute="top" secondItem="9IS-qG-6oZ" secondAttribute="bottom" constant="75" id="cdQ-FD-aM8"/>
-                            <constraint firstItem="SFH-SN-pMg" firstAttribute="top" secondItem="Xbk-Se-F6O" secondAttribute="bottom" constant="75" id="i9e-yS-95q"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="0j5-2y-9la" appends="YES" id="0El-Ed-BWN"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="circle" destination="9IS-qG-6oZ" id="VDM-Z6-Ofd"/>
@@ -264,6 +265,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4O-MJ-rSw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="d7j-WV-B1N" userLabel="Exit" sceneMemberID="exit"/>
+                <swipeGestureRecognizer direction="right" id="0j5-2y-9la">
+                    <connections>
+                        <action selector="onSwipe:" destination="9JV-Fi-iat" id="pyB-VB-uJk"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="438" y="1817"/>
         </scene>
@@ -287,16 +293,6 @@
                                     <constraint firstAttribute="width" constant="100" id="cH6-XD-OzE"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upa-at-w8X">
-                                <rect key="frame" x="283" y="495" width="35" height="30"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="transition:" destination="9JV-Fi-iat" eventType="touchUpInside" id="B2T-tT-Wlx"/>
-                                    <segue destination="3NY-ca-vz9" kind="unwind" identifier="unwindFromCustomSegueDestinationToCustomSegueSource" unwindAction="unwindToCustomSegueTransitionSource:" id="TgN-2r-kC1"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="qAB-tL-eRh">
                                 <rect key="frame" x="474" y="138" width="100" height="100"/>
                                 <constraints>
@@ -304,16 +300,26 @@
                                     <constraint firstAttribute="height" constant="100" id="qWj-XD-maP"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Z4-dB-5nN">
+                                <rect key="frame" x="263" y="559" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="FcI-R6-4Jp" firstAttribute="top" secondItem="aDm-CS-O0h" secondAttribute="bottom" constant="10" id="E5x-B4-3II"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FcI-R6-4Jp" secondAttribute="trailing" constant="10" id="JCt-W9-ldn"/>
                             <constraint firstItem="qAB-tL-eRh" firstAttribute="top" secondItem="FcI-R6-4Jp" secondAttribute="bottom" constant="8" id="RsD-zz-hD5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qAB-tL-eRh" secondAttribute="trailing" constant="10" id="b4I-iu-MNY"/>
-                            <constraint firstAttribute="centerX" secondItem="Upa-at-w8X" secondAttribute="centerX" constant="-0.5" id="gcv-91-yhv"/>
-                            <constraint firstItem="rF4-aP-Xe1" firstAttribute="top" secondItem="Upa-at-w8X" secondAttribute="bottom" constant="75" id="iC7-ok-XBA"/>
+                            <constraint firstItem="rF4-aP-Xe1" firstAttribute="top" secondItem="0Z4-dB-5nN" secondAttribute="bottom" constant="20" id="c1p-Qf-b78"/>
+                            <constraint firstAttribute="centerX" secondItem="0Z4-dB-5nN" secondAttribute="centerX" id="uod-qn-gQP"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ZoG-bu-XQ4" appends="YES" id="6ru-FF-HbO"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="circle" destination="FcI-R6-4Jp" id="4O2-Kh-RcL"/>
@@ -322,6 +328,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HjJ-2b-1ng" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="3NY-ca-vz9" userLabel="Exit" sceneMemberID="exit"/>
+                <swipeGestureRecognizer direction="left" id="ZoG-bu-XQ4">
+                    <connections>
+                        <action selector="onSwipe:" destination="mDA-Kf-snT" id="au4-fh-Zea"/>
+                        <segue destination="3NY-ca-vz9" kind="unwind" unwindAction="unwindToCustomTransitionSource:" id="OoF-XA-b0J"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1141" y="1817"/>
         </scene>
