@@ -269,7 +269,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FcI-R6-4Jp" customClass="CircleView" customModule="AnimationPlayground" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FcI-R6-4Jp" customClass="CircleView" customModule="AnimationPlayground" customModuleProvider="target">
                                 <rect key="frame" x="459" y="30" width="100" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
