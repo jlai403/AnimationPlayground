@@ -22,18 +22,27 @@ class CustomTransitionDelegate: NSObject, UIViewControllerAnimatedTransitioning,
         containerView.addSubview(destinationController.view)
         destinationController.view.layoutIfNeeded()
         
-        var circleStartAnimationFrame = sourceController.circle.frame
-        var circleDestinationAnimationFrame = destinationController.circle.frame
-        destinationController.circle.frame = circleStartAnimationFrame
+        var sourceCircleFrame = sourceController.circle.frame
+        var destinationCircleFrame = destinationController.circle.frame
+        destinationController.circle.frame = sourceCircleFrame
         
-        var imageStartAnimationFrame = sourceController.image.frame
-        var imageDestinationAnimationFrame = destinationController.image.frame
-        destinationController.image.frame = imageStartAnimationFrame
+        var sourceImageFrame = sourceController.image.frame
+        var destinationImageFrame = destinationController.image.frame
+        destinationController.image.frame = sourceImageFrame
         
+        let animation = CABasicAnimation(keyPath: "cornerRadius")
+        animation.fromValue = sourceController.image.layer.cornerRadius
+        animation.toValue = destinationImageFrame.width / 2.0
+        animation.duration = self.transitionDuration(transitionContext)
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        destinationController.image.layer.addAnimation(animation, forKey: "cornerRadius")
+        
+
         UIView.animateWithDuration(self.transitionDuration(transitionContext),
             animations: {
-                destinationController.circle.frame = circleDestinationAnimationFrame
-                destinationController.image.frame = imageDestinationAnimationFrame
+                destinationController.circle.frame = destinationCircleFrame
+
+                destinationController.image.frame = destinationImageFrame
                 destinationController.view.backgroundColor = Colors.capeHoney
             },
             completion: { finished in
@@ -41,6 +50,7 @@ class CustomTransitionDelegate: NSObject, UIViewControllerAnimatedTransitioning,
             }
         )
     }
+    
     
     private func dismissAnimation(transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView()
@@ -50,19 +60,29 @@ class CustomTransitionDelegate: NSObject, UIViewControllerAnimatedTransitioning,
         containerView.addSubview(destinationController.view)
         destinationController.view.layoutIfNeeded()
         
-        var circleStartAnimationFrame = sourceController.circle.frame
-        var circleDestinationAnimationFrame = destinationController.circle.frame
-        destinationController.circle.frame = circleStartAnimationFrame
+        destinationController.view.backgroundColor = Colors.capeHoney
         
-        var imageStartAnimationFrame = sourceController.image.frame
-        var imageDestinationAnimationFrame = destinationController.image.frame
-        destinationController.image.frame = imageStartAnimationFrame
+        var sourceCircleFrame = sourceController.circle.frame
+        var destinationCircleFrame = destinationController.circle.frame
+        destinationController.circle.frame = sourceCircleFrame
+        
+        var sourceImageFrame = sourceController.image.frame
+        var destinationImageFrame = destinationController.image.frame
+        destinationController.image.frame = sourceImageFrame
+        
+        let cornerRadiusAnimation = CABasicAnimation(keyPath: "cornerRadius")
+        cornerRadiusAnimation.fromValue = sourceController.image.layer.cornerRadius
+        cornerRadiusAnimation.toValue = destinationImageFrame.width / 2.0
+        cornerRadiusAnimation.duration = self.transitionDuration(transitionContext)
+        cornerRadiusAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        destinationController.image.layer.addAnimation(cornerRadiusAnimation, forKey: "cornerRadius")
         
         UIView.animateWithDuration(self.transitionDuration(transitionContext),
             animations: {
-                destinationController.circle.frame = circleDestinationAnimationFrame
-                destinationController.image.frame = imageDestinationAnimationFrame
-                destinationController.view.backgroundColor = Colors.capeHoney
+                destinationController.circle.frame = destinationCircleFrame
+
+                destinationController.image.frame = destinationImageFrame
+                destinationController.view.backgroundColor = UIColor.whiteColor()
             },
             completion: { finished in
                 transitionContext.completeTransition(true)
@@ -74,16 +94,16 @@ class CustomTransitionDelegate: NSObject, UIViewControllerAnimatedTransitioning,
         return 1.5
     }
 
+    
     // MARK: UIViewControllerTransitioningDelegate protocol methods
 
-    // return the animataor when presenting a viewcontroller
-    // remmeber that an animator (or animation controller) is any object that aheres to the UIViewControllerAnimatedTransitioning protocol
+    // presenting - segue
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         self.presenting = true
         return self
     }
     
-    // return the animator used when dismissing from a viewcontroller
+    // dismissing - unwind
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         self.presenting = false
         return self
