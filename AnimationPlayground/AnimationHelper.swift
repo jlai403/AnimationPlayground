@@ -20,7 +20,7 @@ class AnimationHelper {
         )
     }
     
-    func animateImageWithCircleBorder(duration: Double, source: UIImageView, destination: UIImageView, completion: (()->Void)? = nil) {
+    func animateImage(duration: Double, source: RoundUIImageView, destination: RoundUIImageView, completion: (()->Void)? = nil) {
         
         destination.image = source.image
         

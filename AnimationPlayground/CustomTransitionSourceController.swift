@@ -5,22 +5,9 @@ class CustomTransitionSourceController: UIViewController {
     let customTransitionDelegate = CustomTransitionDelegate()
     
     @IBOutlet weak var circle: CircleView!
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var image: RoundUIImageView!
     
-    override func viewDidLoad() {
-        styleAvatar()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-    }
-    
-    func styleAvatar() {
-        self.image.layer.cornerRadius = self.image.frame.width / 2
-        self.image.layer.masksToBounds = true
-        self.image.layer.borderColor = Colors.jordyBlue.CGColor
-        self.image.layer.borderWidth = 3
-    }
-    
+
     @IBAction func onSwipe(sender: UISwipeGestureRecognizer) {
         self.performSegueWithIdentifier("customSegueSourceToCustomSegueDestination", sender: self)
     }
@@ -65,7 +52,7 @@ class CustomTransitionDelegate: NSObject, UIViewControllerAnimatedTransitioning,
         
         AnimationHelper().animateElement(duration, source: sourceController.circle, destination: destinationController.circle)
         
-        AnimationHelper().animateImageWithCircleBorder(duration, source: sourceController.image, destination: destinationController.image) {
+        AnimationHelper().animateImage(duration, source: sourceController.image, destination: destinationController.image) {
             transitionContext.completeTransition(true)
         }
     }
@@ -82,7 +69,7 @@ class CustomTransitionDelegate: NSObject, UIViewControllerAnimatedTransitioning,
         
         AnimationHelper().animateElement(duration, source: sourceController.circle, destination: destinationController.circle)
         
-        AnimationHelper().animateImageWithCircleBorder(duration, source: sourceController.image, destination: destinationController.image) {
+        AnimationHelper().animateImage(duration, source: sourceController.image, destination: destinationController.image) {
             transitionContext.completeTransition(true)
         }
     }
