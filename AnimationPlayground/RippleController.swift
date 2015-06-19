@@ -64,7 +64,11 @@ class RippleController: UIViewController {
         circleView.hidden = false
         UIView.animateWithDuration(duration,
             animations: {
-                circleView.expandAndFade(maxWidth)
+                var halfEndSize = maxWidth / 2
+                var x = circleView.frame.midX
+                var y = circleView.frame.midY
+                circleView.frame = CGRectMake(x - halfEndSize, y - halfEndSize, maxWidth, maxWidth)
+                circleView.alpha = 0
             },
             completion: { finished in
                 circleView.reset(circleView.frame.midX, y: circleView.frame.midY)

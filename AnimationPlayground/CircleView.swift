@@ -30,13 +30,4 @@ import UIKit
         self.alpha = 1.0
         self.hidden = true
     }
-    
-    func expandAndFade(maxWidth: CGFloat) {
-        var endSize = CGFloat(maxWidth)
-        var halfEndSize = endSize/2
-        var x = self.frame.midX
-        var y = self.frame.midY
-        self.frame = CGRectMake(x - halfEndSize, y - halfEndSize, endSize, endSize)
-        self.alpha = 0
-    }
 }
