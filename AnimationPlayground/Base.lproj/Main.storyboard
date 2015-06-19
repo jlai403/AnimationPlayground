@@ -302,7 +302,7 @@
                     <connections>
                         <outlet property="circle" destination="9IS-qG-6oZ" id="VDM-Z6-Ofd"/>
                         <outlet property="image" destination="oyf-Vg-WGf" id="gAz-dy-f7z"/>
-                        <segue destination="mDA-Kf-snT" kind="custom" identifier="customSegueSourceToCustomSegueDestination" id="0p9-vw-SBL"/>
+                        <segue destination="mDA-Kf-snT" kind="show" identifier="customSegueSourceToCustomSegueDestination" id="0p9-vw-SBL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4O-MJ-rSw" userLabel="First Responder" sceneMemberID="firstResponder"/>
