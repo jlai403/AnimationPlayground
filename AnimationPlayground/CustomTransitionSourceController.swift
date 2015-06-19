@@ -63,9 +63,7 @@ class CustomTransitionDelegate: NSObject, UIViewControllerAnimatedTransitioning,
         
         var duration = self.transitionDuration(transitionContext)
         
-        AnimationHelper().animateElement(duration, source: sourceController.circle, destination: destinationController.circle) {
-            transitionContext.completeTransition(true)
-        }
+        AnimationHelper().animateElement(duration, source: sourceController.circle, destination: destinationController.circle)
         
         AnimationHelper().animateImageWithCircleBorder(duration, source: sourceController.image, destination: destinationController.image) {
             transitionContext.completeTransition(true)
@@ -82,9 +80,7 @@ class CustomTransitionDelegate: NSObject, UIViewControllerAnimatedTransitioning,
         
         var duration = self.transitionDuration(transitionContext)
         
-        AnimationHelper().animateElement(duration, source: sourceController.circle, destination: destinationController.circle) {
-            transitionContext.completeTransition(true)
-        }
+        AnimationHelper().animateElement(duration, source: sourceController.circle, destination: destinationController.circle)
         
         AnimationHelper().animateImageWithCircleBorder(duration, source: sourceController.image, destination: destinationController.image) {
             transitionContext.completeTransition(true)

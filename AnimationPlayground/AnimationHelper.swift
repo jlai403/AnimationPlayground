@@ -2,7 +2,7 @@ import UIKit
 
 class AnimationHelper {
     
-    func animateElement(duration: Double, source: UIView, destination: UIView, completion: ()->Void) {
+    func animateElement(duration: Double, source: UIView, destination: UIView, completion: (()-> Void)? = nil) {
         
         var cachedDestination = destination.frame
         
@@ -13,12 +13,14 @@ class AnimationHelper {
                 destination.frame = cachedDestination
             },
             completion: { finished in
-                completion()
+                if let onComplete: ()->Void = completion {
+                    onComplete()
+                }
             }
         )
     }
     
-    func animateImageWithCircleBorder(duration: Double, source: UIImageView, destination: UIImageView, completion: ()->Void) {
+    func animateImageWithCircleBorder(duration: Double, source: UIImageView, destination: UIImageView, completion: (()->Void)? = nil) {
         
         destination.image = source.image
         
@@ -37,7 +39,9 @@ class AnimationHelper {
                 destination.frame = cachedDestination
             },
             completion: { finished in
-                completion()
+                if let onComplete: ()->Void = completion {
+                    onComplete()
+                }
             }
         )
     }
