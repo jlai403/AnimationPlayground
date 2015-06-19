@@ -4,10 +4,17 @@ import UIKit
     
     private var selectedColor: UIColor?
     private var selectedLineWidth: CGFloat = 1.0
+    private var selectedFillColor = false
     
     @IBInspectable var lineColor: UIColor = UIColor.blackColor() {
         didSet {
             selectedColor = lineColor
+        }
+    }
+    
+    @IBInspectable var fillColor: Bool = false {
+        didSet {
+            selectedFillColor = fillColor
         }
     }
     
@@ -41,10 +48,16 @@ import UIKit
     override func drawRect(rect: CGRect) {
         var context = UIGraphicsGetCurrentContext()
         CGContextSetLineWidth(context, selectedLineWidth)
-
         selectedColor?.set()
         
         CGContextAddArc(context, (frame.size.width)/2, (frame.size.height)/2, (frame.size.width - 10)/2, 0, CGFloat(M_PI*2.0), 1)
+
+        if (selectedFillColor) {
+            CGContextSaveGState(context)
+            CGContextClip(context)
+            CGContextFillRect(context, self.bounds)
+            CGContextRestoreGState(context)
+        }
         
         CGContextStrokePath(context)
     }
