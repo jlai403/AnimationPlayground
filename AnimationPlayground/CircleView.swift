@@ -36,7 +36,6 @@ import UIKit
     
     private func setDefaults() {
         self.backgroundColor = UIColor.clearColor()
-        self.hidden = true
     }
     
     override func drawRect(rect: CGRect) {
