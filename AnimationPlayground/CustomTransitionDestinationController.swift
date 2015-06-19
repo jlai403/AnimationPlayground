@@ -19,5 +19,5 @@ class CustomTransitionDestinationController: UIViewController {
         self.image.layer.borderColor = Colors.jordyBlue.CGColor
         self.image.layer.borderWidth = 3
     }
-    
+
 }

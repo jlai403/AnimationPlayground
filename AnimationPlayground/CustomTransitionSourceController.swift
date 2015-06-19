@@ -21,7 +21,7 @@ class CustomTransitionSourceController: UIViewController {
         self.image.layer.borderWidth = 3
     }
     
-    @IBAction func transition(sender: UIButton) {
+    @IBAction func onSwipe(sender: UISwipeGestureRecognizer) {
         self.performSegueWithIdentifier("customSegueSourceToCustomSegueDestination", sender: self)
     }
     
@@ -33,7 +33,7 @@ class CustomTransitionSourceController: UIViewController {
         }
     }
     
-    @IBAction func unwindToCustomSegueTransitionSource(segue: UIStoryboardSegue) {
+    @IBAction func unwindToCustomTransitionSource(segue: UIStoryboardSegue) {
         
     }
 }
