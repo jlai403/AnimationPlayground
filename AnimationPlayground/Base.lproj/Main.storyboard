@@ -158,13 +158,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUy-09-9XP">
-                                <rect key="frame" x="354" y="139" width="200" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="5kP-Jc-gfd"/>
-                                    <constraint firstAttribute="height" constant="50" id="ysy-oM-Pi3"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3om-rx-vtl" customClass="MoveButton" customModule="AnimationPlayground" customModuleProvider="target">
                                 <rect key="frame" x="46" y="475" width="200" height="50"/>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -180,18 +173,28 @@
                                     <action selector="translate:" destination="6FK-lN-hG8" eventType="touchUpInside" id="6ZI-XT-6zP"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PY-em-yKF">
+                                <rect key="frame" x="334" y="139" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="X5P-QX-s8g"/>
+                                    <constraint firstAttribute="height" constant="50" id="b4V-Z5-JJJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PIq-I7-Lva" firstAttribute="top" secondItem="3om-rx-vtl" secondAttribute="bottom" constant="75" id="1fY-a4-Dn3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0PY-em-yKF" secondAttribute="trailing" constant="50" id="HDO-8E-49j"/>
                             <constraint firstItem="3om-rx-vtl" firstAttribute="leading" secondItem="8zm-Hm-JIx" secondAttribute="leadingMargin" constant="30" id="Rjj-d3-FAa"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GUy-09-9XP" secondAttribute="trailing" constant="30" id="hNk-Zr-mhS"/>
-                            <constraint firstItem="GUy-09-9XP" firstAttribute="top" secondItem="Lxy-7L-ALR" secondAttribute="bottom" constant="75" id="usL-It-Eee"/>
+                            <constraint firstItem="0PY-em-yKF" firstAttribute="top" secondItem="Lxy-7L-ALR" secondAttribute="bottom" constant="75" id="TxQ-nd-ott"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="button" destination="3om-rx-vtl" id="05y-NI-lAM"/>
-                        <outlet property="destination" destination="GUy-09-9XP" id="oVZ-8Y-n7f"/>
+                        <outlet property="destinationLabel" destination="0PY-em-yKF" id="Pze-QC-UTu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NiL-fH-1M8" userLabel="First Responder" sceneMemberID="firstResponder"/>

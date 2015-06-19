@@ -1,30 +1,21 @@
 import UIKit
 
 class TranslationController: UIViewController {
-
-    private let TRANSLATE_INTERVAL = 1.0
     
-    @IBOutlet weak var destination: UIView!
+    @IBOutlet weak var destinationLabel: UILabel!
     
-    @IBOutlet weak var button: TranslateButton!
-    
-    var translatedLabel: UILabel?
+    @IBOutlet var button: TranslateButton!
     
     @IBAction func translate(sender: UIButton) {
         sender.enabled = false
         
-        var newLabel = button.toLabel()
-        self.view.addSubview(newLabel)
-        
-        UIButton.animateWithDuration(TRANSLATE_INTERVAL,
-            animations: {
-                newLabel.frame = self.destination.frame
-            },
-            completion: { (finished) in
-                var newButton = self.getNewButton()
-                self.cleanup(newButton, newLabel: newLabel)
-            }
-        )
+        button.copyToLabel(destinationLabel)
+       
+        AnimationHelper().animateElement(1.0, source: button, destination: self.destinationLabel) {
+            self.button.removeFromSuperview()
+            self.button = self.getNewButton()
+            self.view.addSubview(self.button)
+        }
     }
     
     private func getNewButton() -> TranslateButton {
@@ -41,24 +32,11 @@ class TranslationController: UIViewController {
 
         return newButton
     }
-    
-    func cleanup(newButton:TranslateButton, newLabel:UILabel) {
-        self.button.removeFromSuperview()
-        self.button = newButton
-        self.view.addSubview(self.button)
-        
-        if let label = translatedLabel as UILabel! {
-            label.removeFromSuperview()
-            
-        }
-        self.translatedLabel = newLabel
-    }
 }
 
 class TranslateButton: UIButton {
     
-    func toLabel() -> UILabel {
-        var label = UILabel(frame: self.frame)
+    func copyToLabel(label: UILabel) -> UILabel {
         label.backgroundColor = self.backgroundColor
         label.text = self.titleLabel?.text
         label.textColor = self.titleLabel?.textColor
