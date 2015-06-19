@@ -39,7 +39,7 @@ class RippleController: UIViewController {
     
     private func initRipples() {
         for (var i = 0; i < self.RIPPLE_COUNT; i++) {
-            var newRipple = CircleView(frame: circleView.frame)
+            var newRipple = CircleView(copy: self.circleView)
             self.ripples.append(newRipple)
             self.view.insertSubview(newRipple, belowSubview: circleView)
         }
@@ -78,7 +78,7 @@ class RippleController: UIViewController {
     }
     
     @IBAction func touchRipple(sender: UIButton) {
-        var touchRipple = CircleView(frame: self.circleView.frame)
+        var touchRipple = CircleView(copy: self.circleView)
         self.view.insertSubview(touchRipple, belowSubview: circleView)
         self.ripple(touchRipple, duration: RIPPLE_DURATION, delay: 0, repeat: false)
     }
