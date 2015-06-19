@@ -46,36 +46,32 @@ class RippleController: UIViewController {
     }
     
     func animateRipples() {
-        var delay = 0.75
+        var delay = 0.0
         for ripple in ripples {
-            delayedRipple(delay, circleView: ripple, duration: RIPPLE_DURATION, maxWidth: MAX_RIPPLE_WIDTH)
-            delay += (0.25)
+            self.ripple(ripple, duration: self.RIPPLE_DURATION, delay: delay, repeat: true)
+            delay += 0.25
         }
     }
     
-    func delayedRipple(delay: Double, circleView: CircleView, duration: Double, maxWidth: CGFloat) {
-        var dispatchTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC)))
-        dispatch_after(dispatchTime, dispatch_get_main_queue()) {
-            self.ripple(circleView, duration: duration, maxWidth: maxWidth, repeat: true)
-        }
-    }
-    
-    func ripple(circleView: CircleView, duration:Double, maxWidth: CGFloat, repeat: Bool) {
-        circleView.hidden = false
+    func ripple(ripple: CircleView, duration: Double, delay: Double, repeat: Bool) {
+        ripple.hidden = false
         UIView.animateWithDuration(duration,
+            delay: delay,
+            options: UIViewAnimationOptions.CurveEaseInOut,
             animations: {
-                var halfEndSize = maxWidth / 2
-                var x = circleView.frame.midX
-                var y = circleView.frame.midY
-                circleView.frame = CGRectMake(x - halfEndSize, y - halfEndSize, maxWidth, maxWidth)
-                circleView.alpha = 0
+                var maxRippleWidth = self.MAX_RIPPLE_WIDTH
+                var halfEndSize = maxRippleWidth / 2
+                var x = ripple.frame.midX
+                var y = ripple.frame.midY
+                ripple.frame = CGRectMake(x - halfEndSize, y - halfEndSize, maxRippleWidth, maxRippleWidth)
+                ripple.alpha = 0
             },
             completion: { finished in
-                circleView.reset(circleView.frame.midX, y: circleView.frame.midY)
+                ripple.reset(self.circleView.frame.midX, y: self.circleView.frame.midY)
                 if (repeat) {
-                   self.ripple(circleView, duration: duration, maxWidth: maxWidth, repeat: repeat)
+                    self.ripple(ripple, duration: duration, delay: 0, repeat: repeat)
                 } else {
-                    circleView.removeFromSuperview()
+                    ripple.removeFromSuperview()
                 }
                 
         })
@@ -84,7 +80,7 @@ class RippleController: UIViewController {
     @IBAction func touchRipple(sender: UIButton) {
         var touchRipple = CircleView(frame: self.circleView.frame)
         self.view.insertSubview(touchRipple, belowSubview: circleView)
-        ripple(touchRipple, duration: RIPPLE_DURATION, maxWidth: MAX_RIPPLE_WIDTH, repeat: false)
+        self.ripple(touchRipple, duration: RIPPLE_DURATION, delay: 0, repeat: false)
     }
     
 }

@@ -14,7 +14,7 @@ import UIKit
     
     override func drawRect(rect: CGRect) {
         var context = UIGraphicsGetCurrentContext()
-        CGContextSetLineWidth(context, 1.0)
+        CGContextSetLineWidth(context, 2.0)
 
         Colors.jordyBlue.set()
         
@@ -25,7 +25,7 @@ import UIKit
     
     func reset(x: CGFloat, y: CGFloat) {
         var endSize = CGFloat(100)
-        var halfEndSize = endSize/2
+        var halfEndSize = endSize / 2
         self.frame = CGRectMake(x - halfEndSize, y - halfEndSize, endSize, endSize)
         self.alpha = 1.0
         self.hidden = true
