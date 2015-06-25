@@ -69,4 +69,10 @@ import UIKit
         self.alpha = 1.0
         self.hidden = true
     }
+    
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+        for touch in touches as! Set<UITouch> {
+            let point = touch.locationInView(self)
+        }
+    }
 }

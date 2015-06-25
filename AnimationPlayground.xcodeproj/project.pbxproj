@@ -18,7 +18,7 @@
 		293A9F1E1B2B8BFF00B7DE15 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A9F1D1B2B8BFF00B7DE15 /* CircleView.swift */; };
 		6C13D32F1B33D9E700822FCA /* RoundUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C13D32E1B33D9E700822FCA /* RoundUIImageView.swift */; };
 		6C20A9091B33AC7A006F6EC6 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C20A9081B33AC7A006F6EC6 /* AnimationHelper.swift */; };
-		6C5195CC1B33E2FF001374C9 /* BounceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5195CB1B33E2FF001374C9 /* BounceController.swift */; };
+		6C5195CC1B33E2FF001374C9 /* GravityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5195CB1B33E2FF001374C9 /* GravityController.swift */; };
 		6C6A94C41B2CD54B004F218E /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C6A94C31B2CD54B004F218E /* avatar.png */; };
 		6C6A94C61B2CD968004F218E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6A94C51B2CD968004F218E /* Colors.swift */; };
 		6C77CA111B2BC8F500F25B33 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C77CA101B2BC8F500F25B33 /* HomeController.swift */; };
@@ -51,7 +51,7 @@
 		293A9F1D1B2B8BFF00B7DE15 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		6C13D32E1B33D9E700822FCA /* RoundUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundUIImageView.swift; sourceTree = "<group>"; };
 		6C20A9081B33AC7A006F6EC6 /* AnimationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
-		6C5195CB1B33E2FF001374C9 /* BounceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceController.swift; sourceTree = "<group>"; };
+		6C5195CB1B33E2FF001374C9 /* GravityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityController.swift; sourceTree = "<group>"; };
 		6C6A94C31B2CD54B004F218E /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
 		6C6A94C51B2CD968004F218E /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		6C77CA101B2BC8F500F25B33 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 				6C77CA141B2BCCAB00F25B33 /* TranslationController.swift */,
 				291622941B2F6ECE002B4CFE /* CustomTransitionSourceController.swift */,
 				291622961B2F6F12002B4CFE /* CustomTransitionDestinationController.swift */,
-				6C5195CB1B33E2FF001374C9 /* BounceController.swift */,
+				6C5195CB1B33E2FF001374C9 /* GravityController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -289,7 +289,7 @@
 				6C6A94C61B2CD968004F218E /* Colors.swift in Sources */,
 				291622951B2F6ECE002B4CFE /* CustomTransitionSourceController.swift in Sources */,
 				6C13D32F1B33D9E700822FCA /* RoundUIImageView.swift in Sources */,
-				6C5195CC1B33E2FF001374C9 /* BounceController.swift in Sources */,
+				6C5195CC1B33E2FF001374C9 /* GravityController.swift in Sources */,
 				6C77CA111B2BC8F500F25B33 /* HomeController.swift in Sources */,
 				293A9F1E1B2B8BFF00B7DE15 /* CircleView.swift in Sources */,
 				293A9F001B2B83B900B7DE15 /* RippleController.swift in Sources */,

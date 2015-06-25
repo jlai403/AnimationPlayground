@@ -45,8 +45,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIy-oY-Mna">
-                                <rect key="frame" x="273" y="203" width="52" height="30"/>
-                                <state key="normal" title="bounce">
+                                <rect key="frame" x="276" y="203" width="46" height="30"/>
+                                <state key="normal" title="gravity">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -315,10 +315,10 @@
             </objects>
             <point key="canvasLocation" x="438" y="1193"/>
         </scene>
-        <!--Bounce Controller-->
+        <!--Gravity Controller-->
         <scene sceneID="BSN-Tg-GxA">
             <objects>
-                <viewController id="lxl-5i-37S" userLabel="Bounce Controller" customClass="BounceController" customModule="AnimationPlayground" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lxl-5i-37S" customClass="GravityController" customModule="AnimationPlayground" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uaG-93-g5D"/>
                         <viewControllerLayoutGuide type="bottom" id="jcg-0i-Tfn"/>
@@ -328,8 +328,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zr0-Va-FKz" userLabel="Circle" customClass="CircleView" customModule="AnimationPlayground" customModuleProvider="target">
-                                <rect key="frame" x="275" y="450" width="50" height="50"/>
+                                <rect key="frame" x="275" y="164" width="50" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="A7z-y6-dIM"/>
                                     <constraint firstAttribute="width" constant="50" id="T8y-lv-Q3a"/>
@@ -343,22 +344,36 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="fillColor" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="aeB-gD-O3G" appends="YES" id="DxD-NN-Qe9"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="Zr0-Va-FKz" secondAttribute="centerY" id="IAQ-Ph-54C"/>
+                            <constraint firstItem="Zr0-Va-FKz" firstAttribute="top" secondItem="uaG-93-g5D" secondAttribute="bottom" constant="100" id="N2c-SB-PwA"/>
                             <constraint firstAttribute="centerX" secondItem="Zr0-Va-FKz" secondAttribute="centerX" id="fah-uk-Wu8"/>
                             <constraint firstItem="jcg-0i-Tfn" firstAttribute="top" secondItem="Zr0-Va-FKz" secondAttribute="bottom" constant="100" id="peS-bS-dwQ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="IAQ-Ph-54C"/>
+                                <exclude reference="peS-bS-dwQ"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="ball" destination="Zr0-Va-FKz" id="6Se-ae-eQO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2OX-fB-uau" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="aeB-gD-O3G">
+                    <connections>
+                        <action selector="dragBall:" destination="lxl-5i-37S" id="a5R-hj-7x9"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="438" y="1871"/>
         </scene>
