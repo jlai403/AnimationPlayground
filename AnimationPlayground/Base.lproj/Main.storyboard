@@ -53,10 +53,21 @@
                                     <segue destination="lxl-5i-37S" kind="show" id="WOb-IW-qXc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOK-bJ-t2J">
+                                <rect key="frame" x="270" y="236" width="60" height="30"/>
+                                <state key="normal" title="sprite kit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="II4-e2-OA3" kind="show" id="QHY-45-yFN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Pqm-fJ-Awv" firstAttribute="centerX" secondItem="KIy-oY-Mna" secondAttribute="centerX" constant="0.5" id="03f-X5-RkM"/>
+                            <constraint firstItem="KIy-oY-Mna" firstAttribute="centerX" secondItem="hOK-bJ-t2J" secondAttribute="centerX" constant="-1" id="5m7-N4-2xp"/>
+                            <constraint firstItem="hOK-bJ-t2J" firstAttribute="top" secondItem="KIy-oY-Mna" secondAttribute="bottom" constant="3" id="Cd9-m9-0zd"/>
                             <constraint firstItem="KIy-oY-Mna" firstAttribute="top" secondItem="Pqm-fJ-Awv" secondAttribute="bottom" constant="8" id="HgF-iC-ag1"/>
                             <constraint firstItem="XVh-8s-yzz" firstAttribute="top" secondItem="c0v-0w-ljr" secondAttribute="bottom" constant="8" id="ODj-pB-WP2"/>
                             <constraint firstItem="Pqm-fJ-Awv" firstAttribute="centerX" secondItem="XVh-8s-yzz" secondAttribute="centerX" constant="-1" id="PKq-K4-Z7x"/>
@@ -71,6 +82,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQR-t2-AaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-412" y="775"/>
+        </scene>
+        <!--Sprite Kit Controller-->
+        <scene sceneID="11k-9v-TEq">
+            <objects>
+                <viewController id="II4-e2-OA3" userLabel="Sprite Kit Controller" customClass="SpriteKitController" customModule="AnimationPlayground" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mmu-gf-vFh"/>
+                        <viewControllerLayoutGuide type="bottom" id="9we-YM-YvB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4jo-0J-uXW" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="skView" destination="4jo-0J-uXW" id="V3q-iR-yH8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d6f-66-1Ux" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="438" y="2582"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mpd-Mn-fP3">
