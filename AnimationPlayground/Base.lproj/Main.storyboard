@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="e1g-jF-PM6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="e1g-jF-PM6">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -36,7 +36,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqm-fJ-Awv">
-                                <rect key="frame" x="217" y="165" width="165" height="30"/>
+                                <rect key="frame" x="217" y="241" width="165" height="30"/>
                                 <state key="normal" title="custom segue transition">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -45,7 +45,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIy-oY-Mna">
-                                <rect key="frame" x="276" y="203" width="46" height="30"/>
+                                <rect key="frame" x="276" y="165" width="46" height="30"/>
                                 <state key="normal" title="gravity">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -54,27 +54,38 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOK-bJ-t2J">
-                                <rect key="frame" x="270" y="236" width="60" height="30"/>
-                                <state key="normal" title="sprite kit">
+                                <rect key="frame" x="241" y="203" width="118" height="30"/>
+                                <state key="normal" title="sprite kit (gravity)">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="II4-e2-OA3" kind="show" id="QHY-45-yFN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64t-0V-JAi">
+                                <rect key="frame" x="191" y="279" width="217" height="30"/>
+                                <state key="normal" title="custom segue transition (rotate)">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="06K-52-Nii" kind="showDetail" id="FdQ-KO-x4u"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Pqm-fJ-Awv" firstAttribute="centerX" secondItem="KIy-oY-Mna" secondAttribute="centerX" constant="0.5" id="03f-X5-RkM"/>
-                            <constraint firstItem="KIy-oY-Mna" firstAttribute="centerX" secondItem="hOK-bJ-t2J" secondAttribute="centerX" constant="-1" id="5m7-N4-2xp"/>
-                            <constraint firstItem="hOK-bJ-t2J" firstAttribute="top" secondItem="KIy-oY-Mna" secondAttribute="bottom" constant="3" id="Cd9-m9-0zd"/>
-                            <constraint firstItem="KIy-oY-Mna" firstAttribute="top" secondItem="Pqm-fJ-Awv" secondAttribute="bottom" constant="8" id="HgF-iC-ag1"/>
+                            <constraint firstItem="KIy-oY-Mna" firstAttribute="centerX" secondItem="XVh-8s-yzz" secondAttribute="centerX" constant="-1" id="23L-qB-Uhj"/>
+                            <constraint firstItem="KIy-oY-Mna" firstAttribute="top" secondItem="XVh-8s-yzz" secondAttribute="bottom" constant="8" id="KoS-IV-fDx"/>
+                            <constraint firstItem="hOK-bJ-t2J" firstAttribute="top" secondItem="KIy-oY-Mna" secondAttribute="bottom" constant="8" id="O2i-CZ-4l1"/>
                             <constraint firstItem="XVh-8s-yzz" firstAttribute="top" secondItem="c0v-0w-ljr" secondAttribute="bottom" constant="8" id="ODj-pB-WP2"/>
-                            <constraint firstItem="Pqm-fJ-Awv" firstAttribute="centerX" secondItem="XVh-8s-yzz" secondAttribute="centerX" constant="-1" id="PKq-K4-Z7x"/>
-                            <constraint firstItem="Pqm-fJ-Awv" firstAttribute="top" secondItem="XVh-8s-yzz" secondAttribute="bottom" constant="8" id="XwH-M3-dDV"/>
+                            <constraint firstItem="64t-0V-JAi" firstAttribute="top" secondItem="Pqm-fJ-Awv" secondAttribute="bottom" constant="8" id="PGc-Hf-21S"/>
+                            <constraint firstItem="64t-0V-JAi" firstAttribute="centerX" secondItem="Pqm-fJ-Awv" secondAttribute="centerX" id="WC2-ae-HDq"/>
                             <constraint firstAttribute="centerX" secondItem="c0v-0w-ljr" secondAttribute="centerX" id="gLA-Ia-wxL"/>
+                            <constraint firstItem="hOK-bJ-t2J" firstAttribute="centerX" secondItem="Pqm-fJ-Awv" secondAttribute="centerX" constant="0.5" id="gwe-Eh-kFp"/>
                             <constraint firstItem="XVh-8s-yzz" firstAttribute="centerX" secondItem="c0v-0w-ljr" secondAttribute="centerX" constant="0.5" id="krU-Ar-9Yh"/>
+                            <constraint firstItem="KIy-oY-Mna" firstAttribute="centerX" secondItem="hOK-bJ-t2J" secondAttribute="centerX" constant="-1" id="mpg-eB-XHz"/>
                             <constraint firstItem="c0v-0w-ljr" firstAttribute="top" secondItem="MuT-oj-Aci" secondAttribute="bottom" constant="25" id="rL9-bt-617"/>
+                            <constraint firstItem="Pqm-fJ-Awv" firstAttribute="top" secondItem="hOK-bJ-t2J" secondAttribute="bottom" constant="8" id="sol-AH-NC3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="animations" id="JGP-mb-i2r"/>
@@ -102,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6f-66-1Ux" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="2582"/>
+            <point key="canvasLocation" x="1141" y="1197"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mpd-Mn-fP3">
@@ -308,7 +319,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmb-NQ-11h">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7M8-A7-L43">
                                 <rect key="frame" x="258" y="559" width="84" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -318,14 +329,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="SFH-SN-pMg" firstAttribute="top" secondItem="bmb-NQ-11h" secondAttribute="bottom" constant="20" id="1fk-Sv-b6H"/>
-                            <constraint firstAttribute="centerX" secondItem="bmb-NQ-11h" secondAttribute="centerX" id="CmI-u0-8MM"/>
                             <constraint firstItem="4Bt-N5-2JN" firstAttribute="top" secondItem="34G-aW-iTw" secondAttribute="bottom" id="Cy1-sw-tzQ"/>
                             <constraint firstItem="9IS-qG-6oZ" firstAttribute="leading" secondItem="Gj5-yk-6tU" secondAttribute="leadingMargin" constant="10" id="Kae-VK-rrx"/>
                             <constraint firstItem="4Bt-N5-2JN" firstAttribute="leading" secondItem="Gj5-yk-6tU" secondAttribute="leadingMargin" constant="10" id="P7y-KQ-cYH"/>
                             <constraint firstItem="oyf-Vg-WGf" firstAttribute="leading" secondItem="Gj5-yk-6tU" secondAttribute="leadingMargin" constant="10" id="QF1-Fx-aee"/>
                             <constraint firstItem="9IS-qG-6oZ" firstAttribute="top" secondItem="34G-aW-iTw" secondAttribute="bottom" constant="75" id="QaB-uA-ne6"/>
                             <constraint firstItem="oyf-Vg-WGf" firstAttribute="top" secondItem="9IS-qG-6oZ" secondAttribute="bottom" constant="75" id="cdQ-FD-aM8"/>
+                            <constraint firstItem="SFH-SN-pMg" firstAttribute="top" secondItem="7M8-A7-L43" secondAttribute="bottom" constant="20" id="vWj-b0-deM"/>
+                            <constraint firstAttribute="centerX" secondItem="7M8-A7-L43" secondAttribute="centerX" id="whE-nH-KXN"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="0j5-2y-9la" appends="YES" id="0El-Ed-BWN"/>
@@ -334,7 +345,7 @@
                     <connections>
                         <outlet property="circle" destination="9IS-qG-6oZ" id="VDM-Z6-Ofd"/>
                         <outlet property="image" destination="oyf-Vg-WGf" id="gAz-dy-f7z"/>
-                        <segue destination="mDA-Kf-snT" kind="show" identifier="customSegueSourceToCustomSegueDestination" id="0p9-vw-SBL"/>
+                        <segue destination="mDA-Kf-snT" kind="show" identifier="customTransitionSourceToDestination" id="0p9-vw-SBL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4O-MJ-rSw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -345,7 +356,84 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="438" y="1193"/>
+            <point key="canvasLocation" x="438" y="1889"/>
+        </scene>
+        <!--Custom Transition Rotate Source-->
+        <scene sceneID="JeM-rY-912">
+            <objects>
+                <viewController id="06K-52-Nii" userLabel="Custom Transition Rotate Source" customClass="CustomRotateTransitionSourceController" customModule="AnimationPlayground" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2WA-2a-fuB"/>
+                        <viewControllerLayoutGuide type="bottom" id="xNv-0e-vHJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2P7-2W-DvO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eW8-5c-a4K">
+                                <rect key="frame" x="258" y="559" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="xNv-0e-vHJ" firstAttribute="top" secondItem="eW8-5c-a4K" secondAttribute="bottom" constant="20" id="62a-VR-v3d"/>
+                            <constraint firstAttribute="centerX" secondItem="eW8-5c-a4K" secondAttribute="centerX" id="O1c-hC-W3N"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="DTM-y5-4ZI" appends="YES" id="x29-1j-Xx2"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <segue destination="x4Z-uh-PS4" kind="show" identifier="customRotateTransitionSourceToDestination" id="QjZ-dc-AzC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xbE-21-Joa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="DTM-y5-4ZI">
+                    <connections>
+                        <action selector="swipeRight:" destination="06K-52-Nii" id="zvI-AV-oSw"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="438" y="2587"/>
+        </scene>
+        <!--Custom Rotate Transition Destination Controller-->
+        <scene sceneID="BFR-Pt-hAA">
+            <objects>
+                <viewController id="x4Z-uh-PS4" customClass="CustomRotateTransitionDestinationController" customModule="AnimationPlayground" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F5W-My-GRj"/>
+                        <viewControllerLayoutGuide type="bottom" id="ndT-EC-0VB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dKC-Xh-jst">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Li3-Fi-JAh">
+                                <rect key="frame" x="263" y="559" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2941176593" green="0.67450982329999998" blue="0.77647060160000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="ndT-EC-0VB" firstAttribute="top" secondItem="Li3-Fi-JAh" secondAttribute="bottom" constant="20" id="Dde-da-urv"/>
+                            <constraint firstAttribute="centerX" secondItem="Li3-Fi-JAh" secondAttribute="centerX" id="JB6-bF-s0l"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="pf5-4I-PsM" appends="YES" id="tnP-rq-OMs"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QfY-X2-bYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="pf5-4I-PsM"/>
+            </objects>
+            <point key="canvasLocation" x="1141" y="2587"/>
         </scene>
         <!--Gravity Controller-->
         <scene sceneID="BSN-Tg-GxA">
@@ -407,7 +495,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="438" y="1871"/>
+            <point key="canvasLocation" x="438" y="1197"/>
         </scene>
         <!--Custom Transition Destination Controller-->
         <scene sceneID="00C-C6-CWw">
@@ -491,7 +579,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1141" y="1193"/>
+            <point key="canvasLocation" x="1141" y="1889"/>
         </scene>
     </scenes>
     <resources>

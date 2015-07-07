@@ -2,18 +2,18 @@ import UIKit
 
 class CustomTransitionSourceController: UIViewController {
     
-    let customTransitionDelegate = CustomTransitionDelegate()
+    let customTransitionDelegate = TransitionManager(type: .CustomTransition)
     
     @IBOutlet weak var circle: CircleView!
     @IBOutlet weak var image: RoundUIImageView!
     
 
     @IBAction func onSwipe(sender: UISwipeGestureRecognizer) {
-        self.performSegueWithIdentifier("customSegueSourceToCustomSegueDestination", sender: self)
+        self.performSegueWithIdentifier("customTransitionSourceToDestination", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "customSegueSourceToCustomSegueDestination" {
+        if segue.identifier == "customTransitionSourceToDestination" {
             let destinationController = segue.destinationViewController as! UIViewController
 
             destinationController.transitioningDelegate = customTransitionDelegate
@@ -22,74 +22,5 @@ class CustomTransitionSourceController: UIViewController {
     
     @IBAction func unwindToCustomTransitionSource(segue: UIStoryboardSegue) {
         
-    }
-}
-
-
-class CustomTransitionDelegate: NSObject, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
-    
-    private var presenting = false
-    
-    // MARK: UIViewControllerAnimatedTransitioning protocol methods
-    
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        if presenting {
-            presentingAnimation(transitionContext)
-        } else {
-            dismissAnimation(transitionContext)
-        }
-    }
-    
-    private func presentingAnimation(transitionContext: UIViewControllerContextTransitioning) {
-        let containerView = transitionContext.containerView()
-        let sourceController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! CustomTransitionSourceController
-        let destinationController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! CustomTransitionDestinationController
-        
-        containerView.addSubview(destinationController.view)
-        destinationController.view.layoutIfNeeded()
-        
-        var duration = self.transitionDuration(transitionContext)
-        
-        AnimationHelper().animateElement(duration, source: sourceController.circle, destination: destinationController.circle)
-        
-        AnimationHelper().animateImage(duration, source: sourceController.image, destination: destinationController.image) {
-            transitionContext.completeTransition(true)
-        }
-    }
-    
-    private func dismissAnimation(transitionContext: UIViewControllerContextTransitioning) {
-        let containerView = transitionContext.containerView()
-        let sourceController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! CustomTransitionDestinationController
-        let destinationController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! CustomTransitionSourceController
-        
-        containerView.addSubview(destinationController.view)
-        destinationController.view.layoutIfNeeded()
-        
-        var duration = self.transitionDuration(transitionContext)
-        
-        AnimationHelper().animateElement(duration, source: sourceController.circle, destination: destinationController.circle)
-        
-        AnimationHelper().animateImage(duration, source: sourceController.image, destination: destinationController.image) {
-            transitionContext.completeTransition(true)
-        }
-    }
-    
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
-        return 1.5
-    }
-    
-    
-    // MARK: UIViewControllerTransitioningDelegate protocol methods
-
-    // presenting - segue
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        self.presenting = true
-        return self
-    }
-    
-    // dismissing - unwind
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        self.presenting = false
-        return self
     }
 }

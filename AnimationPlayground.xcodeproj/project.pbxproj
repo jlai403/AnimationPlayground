@@ -25,6 +25,11 @@
 		6C77CA151B2BCCAB00F25B33 /* TranslationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C77CA141B2BCCAB00F25B33 /* TranslationController.swift */; };
 		6CA2489F1B3E2CAA00DF7FC0 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA2489E1B3E2CAA00DF7FC0 /* SpriteKit.framework */; };
 		6CA248A11B3E2CFE00DF7FC0 /* SpriteKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA248A01B3E2CFE00DF7FC0 /* SpriteKitController.swift */; };
+		6CCA458A1B49E05900F70B04 /* CustomTransitionRotateSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCA45891B49E05900F70B04 /* CustomTransitionRotateSourceController.swift */; };
+		6CCA458C1B49E07800F70B04 /* CustomTransitionRotateDestinationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCA458B1B49E07800F70B04 /* CustomTransitionRotateDestinationController.swift */; };
+		6CCA458F1B49E26200F70B04 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCA458E1B49E26200F70B04 /* TransitionManager.swift */; };
+		6CCA45911B49E6F700F70B04 /* ITransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCA45901B49E6F700F70B04 /* ITransitionType.swift */; };
+		6CCA45931B49E73B00F70B04 /* CustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCA45921B49E73B00F70B04 /* CustomTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +65,11 @@
 		6C77CA141B2BCCAB00F25B33 /* TranslationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationController.swift; sourceTree = "<group>"; };
 		6CA2489E1B3E2CAA00DF7FC0 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		6CA248A01B3E2CFE00DF7FC0 /* SpriteKitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteKitController.swift; sourceTree = "<group>"; };
+		6CCA45891B49E05900F70B04 /* CustomTransitionRotateSourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTransitionRotateSourceController.swift; sourceTree = "<group>"; };
+		6CCA458B1B49E07800F70B04 /* CustomTransitionRotateDestinationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTransitionRotateDestinationController.swift; sourceTree = "<group>"; };
+		6CCA458E1B49E26200F70B04 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		6CCA45901B49E6F700F70B04 /* ITransitionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITransitionType.swift; sourceTree = "<group>"; };
+		6CCA45921B49E73B00F70B04 /* CustomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +178,7 @@
 		6C77CA121B2BCC8800F25B33 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6CCA458D1B49E25900F70B04 /* Transitions */,
 				6C77CA101B2BC8F500F25B33 /* HomeController.swift */,
 				293A9EFF1B2B83B900B7DE15 /* RippleController.swift */,
 				6C77CA141B2BCCAB00F25B33 /* TranslationController.swift */,
@@ -175,6 +186,8 @@
 				291622961B2F6F12002B4CFE /* CustomTransitionDestinationController.swift */,
 				6C5195CB1B33E2FF001374C9 /* GravityController.swift */,
 				6CA248A01B3E2CFE00DF7FC0 /* SpriteKitController.swift */,
+				6CCA45891B49E05900F70B04 /* CustomTransitionRotateSourceController.swift */,
+				6CCA458B1B49E07800F70B04 /* CustomTransitionRotateDestinationController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -187,6 +200,16 @@
 				6C13D32E1B33D9E700822FCA /* RoundUIImageView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		6CCA458D1B49E25900F70B04 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				6CCA458E1B49E26200F70B04 /* TransitionManager.swift */,
+				6CCA45901B49E6F700F70B04 /* ITransitionType.swift */,
+				6CCA45921B49E73B00F70B04 /* CustomTransition.swift */,
+			);
+			name = Transitions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,14 +313,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CCA458A1B49E05900F70B04 /* CustomTransitionRotateSourceController.swift in Sources */,
 				291622971B2F6F12002B4CFE /* CustomTransitionDestinationController.swift in Sources */,
 				6C77CA151B2BCCAB00F25B33 /* TranslationController.swift in Sources */,
 				6C20A9091B33AC7A006F6EC6 /* AnimationHelper.swift in Sources */,
 				6C6A94C61B2CD968004F218E /* Colors.swift in Sources */,
 				291622951B2F6ECE002B4CFE /* CustomTransitionSourceController.swift in Sources */,
+				6CCA45911B49E6F700F70B04 /* ITransitionType.swift in Sources */,
+				6CCA458F1B49E26200F70B04 /* TransitionManager.swift in Sources */,
 				6C13D32F1B33D9E700822FCA /* RoundUIImageView.swift in Sources */,
 				6C5195CC1B33E2FF001374C9 /* GravityController.swift in Sources */,
 				6C77CA111B2BC8F500F25B33 /* HomeController.swift in Sources */,
+				6CCA458C1B49E07800F70B04 /* CustomTransitionRotateDestinationController.swift in Sources */,
+				6CCA45931B49E73B00F70B04 /* CustomTransition.swift in Sources */,
 				293A9F1E1B2B8BFF00B7DE15 /* CircleView.swift in Sources */,
 				293A9F001B2B83B900B7DE15 /* RippleController.swift in Sources */,
 				293A9EFE1B2B83B900B7DE15 /* AppDelegate.swift in Sources */,
