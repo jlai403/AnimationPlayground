@@ -4,13 +4,11 @@ class AnimationHelper {
     
     func animateElement(duration: Double, source: UIView, destination: UIView, completion: (()-> Void)? = nil) {
         
-        var cachedDestination = destination.frame
-        
-        destination.frame = source.frame
+        destination.transform = transformFromRectToRect(from: source.frame, to: destination.frame)
         
         UIView.animateWithDuration(duration,
             animations: {
-                destination.frame = cachedDestination
+                destination.transform = CGAffineTransformIdentity
             },
             completion: { finished in
                 if let onComplete: ()->Void = completion {
@@ -20,8 +18,7 @@ class AnimationHelper {
         )
     }
     
-    func animateImage(duration: Double, source: RoundUIImageView, destination: RoundUIImageView, completion: (()->Void)? = nil) {
-        
+    func animateImage(duration: Double, source: UIImageView, destination: UIImageView, completion: (()->Void)? = nil) {
         destination.image = source.image
         
         var cachedDestination = destination.frame
@@ -44,5 +41,20 @@ class AnimationHelper {
                 }
             }
         )
+    }
+    
+    // MARK: private helpers
+    
+    private func transformFromRectToRect(#from: CGRect, to: CGRect) -> CGAffineTransform {
+        
+        var xScale = from.width / to.width
+        var yScale = from.height / to.height
+        var scale = CGAffineTransformMakeScale(xScale, yScale)
+        
+        var xTranslation = from.midX - to.midX
+        var yTranslation = from.midY - to.midY
+        var translate = CGAffineTransformMakeTranslation(xTranslation, yTranslation)
+    
+        return CGAffineTransformConcat(scale, translate)
     }
 }
