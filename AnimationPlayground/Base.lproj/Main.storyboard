@@ -431,7 +431,12 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QfY-X2-bYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="pf5-4I-PsM"/>
+                <exit id="CM2-qS-jn8" userLabel="Exit" sceneMemberID="exit"/>
+                <swipeGestureRecognizer direction="left" id="pf5-4I-PsM">
+                    <connections>
+                        <segue destination="CM2-qS-jn8" kind="unwind" unwindAction="unwindToCustomTransitionRotateSource:" id="3cg-DL-Q8F"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1141" y="2587"/>
         </scene>

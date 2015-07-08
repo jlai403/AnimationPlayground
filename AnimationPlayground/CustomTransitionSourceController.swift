@@ -2,7 +2,7 @@ import UIKit
 
 class CustomTransitionSourceController: UIViewController {
     
-    let customTransitionDelegate = TransitionManager(type: .CustomTransition)
+    let transitionManager = TransitionManager(type: TransitionType.CustomTransition)
     
     @IBOutlet weak var circle: CircleView!
     @IBOutlet weak var image: RoundUIImageView!
@@ -15,8 +15,7 @@ class CustomTransitionSourceController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "customTransitionSourceToDestination" {
             let destinationController = segue.destinationViewController as! UIViewController
-
-            destinationController.transitioningDelegate = customTransitionDelegate
+            destinationController.transitioningDelegate = transitionManager
         }
     }
     

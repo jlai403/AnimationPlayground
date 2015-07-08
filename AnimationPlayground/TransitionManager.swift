@@ -11,15 +11,7 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
     }
     
     private func initTransitionType(type: TransitionType) {
-        switch (type) {
-        case .CustomTransition:
-            self.transition = CustomTranstion()
-            break
-        case .CustomRotateTransition:
-            break
-        default:
-            fatalError("unknown transition type: \(type)")
-        }
+        self.transition = TransitionTypeFactory.typeFor(type)
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {

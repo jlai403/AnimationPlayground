@@ -36,19 +36,19 @@ class CustomTranstion: ITransitionType {
     
     func run() {
         if presenting {
-            runPresentingAnimation()
+            runPresentingTransition()
         } else{
-            runDismissAnimation()
+            runDismissTransition()
         }
     }
     
-    private func runPresentingAnimation() {
+    private func runPresentingTransition() {
         AnimationHelper().animateElement(duration, source: customTransitionSourceController.circle, destination: customTransitionDestinationController.circle)
         
         AnimationHelper().animateImage(duration, source: customTransitionSourceController.image, destination: customTransitionDestinationController.image)
     }
     
-    private func runDismissAnimation() {
+    private func runDismissTransition() {
         AnimationHelper().animateElement(duration, source: customTransitionDestinationController.circle, destination: customTransitionSourceController.circle)
         
         AnimationHelper().animateImage(duration, source: customTransitionDestinationController.image, destination: customTransitionSourceController.image)
